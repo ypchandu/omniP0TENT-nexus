@@ -25,7 +25,6 @@ export class HeroVideoComponent implements AfterViewInit {
     'Product Strategist',
     'AI Explorer',
     'Business Intelligence Analyst',
-    'Data Storyteller',
     'Statistical Modeler',
     'Machine Learning Engineer',
     'Predictive Analytics Developer',
@@ -49,9 +48,18 @@ export class HeroVideoComponent implements AfterViewInit {
     // Load saved mute state from localStorage
     const savedMute = localStorage.getItem('videoMuted');
     this.isMuted = savedMute === null ? true : savedMute === 'true';
+    this.introVid.nativeElement.play();
 
     const video = this.introVid.nativeElement;
     video.muted = this.isMuted;
+    try {
+    const video = this.introVid.nativeElement;
+    video.muted = true;
+    video.play().catch((err) => console.warn("Autoplay error:", err));
+  } catch (e) {
+    console.error("Video element not ready:", e);
+  }
+
     if ('requestVideoFrameCallback' in video) {
     video.requestVideoFrameCallback(() => {
       document.body.classList.add('video-ready');
