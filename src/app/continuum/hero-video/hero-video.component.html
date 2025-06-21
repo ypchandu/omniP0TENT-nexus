@@ -1,0 +1,38 @@
+<section #heroSection class="hero-video" [class.scrolled]="scrolled">
+  <video
+    #introVid
+    class="hero-video__media"
+    autoplay
+    muted
+    playsinline
+    loop
+    preload="auto"
+  >
+    <source src="assets/intro.mp4" type="video/mp4" />
+  </video>
+
+  <!-- SCROLL-BASED BLACK OVERLAY -->
+  <div class="hero-video-dark"></div>
+
+  <!-- Centered Content -->
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h2 class="hero-title">
+        <span>{{ displayedText }}</span><span class="cursor">|</span>
+      </h2>
+      <p class="hero-subtitle">
+        Data Analyst &amp; Aspiring Data Scientist turning complex datasets into high-impact insights
+      </p>
+      <a
+        class="resume-button"
+        href="assets/photon/Quantam Hero Resume.pdf"
+        target="_blank"
+        rel="noopener"
+      >
+        View Resume
+      </a>
+    </div>
+  </div>
+
+
+</section>

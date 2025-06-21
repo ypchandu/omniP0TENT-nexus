@@ -1,0 +1,191 @@
+<section class="carousel-section">
+  <!-- Optional: Background SVG -->
+  <!-- <img src="assets/about-bg.svg" alt="Background" class="carousel-bg" aria-hidden="true" /> -->
+
+  
+  <div #carousel class="carousel-wrapper">
+    <!-- Panel 1: About -->
+ <div class="panel panel--about">
+  <div class="container">
+  <h2 class="about-heading neon-highlight">About Me</h2>
+
+  <div class="about-container">
+    <!-- Left: Profile -->
+    <div class="profile-wrapper">
+      <img
+        src="assets/quantum_hero.jpg"
+        alt="Profile"
+        class="about-img zoom-in"
+      />
+    </div>
+
+    <!-- Right: Intro and Stats -->
+    <div class="about-info">
+      <div class="about-text fade-in-right">
+        <p>
+          I’m a data-driven professional with a background in research-led business development.
+          <br /><br />
+          Over the last two years I’ve built automated pipelines, custom analytics engines,
+          and real-time dashboards that drive growth and operational excellence.
+        </p>
+      </div>
+
+      <!-- Now Below the Text -->
+      <div class="stats-row">
+        <div class="stat-card fade-in-left">
+          <i class="fas fa-briefcase stat-icon"></i>
+          <div class="stat-number">{{ stats[0].value }}{{ stats[0].suffix }}</div>
+          <div class="stat-label">{{ stats[0].label }}</div>
+        </div>
+        <div class="stat-card fade-in-left">
+          <i class="fas fa-project-diagram stat-icon"></i>
+          <div class="stat-number">{{ stats[1].value }}{{ stats[1].suffix }}</div>
+          <div class="stat-label">{{ stats[1].label }}</div>
+        </div>
+        <div class="stat-card fade-in-left">
+          <i class="fas fa-building stat-icon"></i>
+          <div class="stat-number">{{ stats[2].value }}{{ stats[2].suffix }}</div>
+          <div class="stat-label">{{ stats[2].label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+        <!-- Panel 2: Skills -->
+<div class="panel panel--skills in-view">
+  <div class="container">
+  <h2 class="skills-title fade-in-up">Skills</h2>
+
+  <div class="skills-grid">
+    <div class="skill-box fade-in-up" >
+      <h3>Programming</h3>
+      <div class="skill-list">
+        <span class="badge" data-info="Used for ETL, automation">Python</span>
+        <span class="badge">Pandas</span>
+        <span class="badge">PySpark</span>
+        <span class="badge">NumPy</span>
+        <span class="badge">TensorFlow</span>
+        <span class="badge">Matplotlib</span>
+        <span class="badge">PyTorch</span>
+        <span class="badge">R (Basic)</span>
+        <span class="badge">VBA</span>
+      </div>
+    </div>
+
+    <!-- Block 2: Databases -->
+    <div class="skill-box">
+      <h3>Databases</h3>
+      <div class="badge-list">
+        <span class="badge">MySQL</span>
+        <span class="badge">NoSQL</span>
+      </div>
+    </div>
+
+
+    <!-- Block 4: Tools -->
+    <div class="skill-box">
+      <h3>Tools & Tech</h3>
+      <div class="skill-list">
+        <span class="badge">Docker</span>
+        <span class="badge">Git</span>
+        <span class="badge">Linux</span>
+        <span class="badge">Excel</span>
+        <span class="badge">Tableau</span>
+        <span class="badge">Outlook</span>
+        <span class="badge">Jira</span>
+        <span class="badge">ZoomInfo</span>
+        <span class="badge">Hunter IO</span>
+        <span class="badge">Sales Navigator</span>
+        <span class="badge">Seamless AI</span>
+        <span class="badge">Metasploit</span>
+        <span class="badge">Data Analysis</span>
+        <span class="badge">Data Science</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+    <!-- Panel 3: Certifications -->
+<!-- Panel 3: Certifications -->
+<!-- Panel 3: Certifications -->
+<div class="panel panel--certs">
+  <div class="container">
+  <h2 class="cert-title fade-in-up">Certifications</h2>
+  <div class="certs-grid">
+    <!-- Card 1: Core Python -->
+<div class="cert-card fade-in-up">
+  <div class="cert-inner">
+    <!-- FRONT -->
+    <div class="cert-front" style="background-image: url('assets/certification/python.png');">
+      <h3>Core Python</h3>
+    </div>
+
+    <!-- BACK -->
+    <div class="cert-back">
+      <span class="cert-badge">Skill-Lync Verified</span>
+      <p><strong>Issuer:</strong> Skill-Lync</p>
+      <p><strong>Date:</strong> April 2023</p>
+      <a href="https://example.com/python-cert" target="_blank" class="cert-link">View Certificate</a>
+    </div>
+  </div>
+</div>
+    <!-- Tableau -->
+    <div class="cert-card">
+      <div class="cert-inner">
+        <div class="cert-front">
+          <img src="assets/certification/Tableau.png" alt="Tableau Logo" />
+          <h3>Tableau</h3>
+        </div>
+        <div class="cert-back">
+          <span class="cert-badge">Skill-Lync Verified</span>
+          <p><strong>Issuer:</strong> Skill-Lync</p>
+          <p><strong>Date:</strong> April 2023</p>
+          <a href="https://example.com/tableau-cert" target="_blank" class="cert-link">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Excel -->
+    <div class="cert-card">
+      <div class="cert-inner">
+        <div class="cert-front">
+          <img src="assets/certification/excel.png" alt="Excel Logo" />
+          <h3>Excel</h3>
+        </div>
+        <div class="cert-back">
+          <span class="cert-badge">Skill-Lync Verified</span>
+          <p><strong>Issuer:</strong> Skill-Lync</p>
+          <p><strong>Date:</strong> March 2023</p>
+          <a href="https://example.com/excel-cert" target="_blank" class="cert-link">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SQL -->
+    <div class="cert-card">
+      <div class="cert-inner">
+        <div class="cert-front">
+          <img src="assets/certification/sql.png" alt="SQL Logo" />
+          <h3>SQL</h3>
+        </div>
+        <div class="cert-back">
+          <span class="cert-badge">Skill-Lync Verified</span>
+          <p><strong>Issuer:</strong> Skill-Lync</p>
+          <p><strong>Date:</strong> March 2023</p>
+          <a href="https://example.com/sql-cert" target="_blank" class="cert-link">View Certificate</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+</section>

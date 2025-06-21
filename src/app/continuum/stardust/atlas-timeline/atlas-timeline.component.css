@@ -1,0 +1,247 @@
+:host {
+  display: block;
+  width: 100vw;
+  margin: 0 calc(-1 * 2rem);
+  padding:  0;
+ 
+}
+
+.atlas-timeline {
+  width: 100vw;                  /* fill the container, not the viewport */                    /* reset any parent margins */
+  padding: 4rem;             /* your vertical breathing room */
+  box-sizing: border-box;       /* include padding in width calculations */
+  background:
+    #111 url('/assets/photon/work.png') no-repeat center top/cover fixed;
+  /* shorthand for background-color + image + position/size + attachment */
+  color: #eee;
+  overflow: hidden;
+  --neon-accent: #4a90e2;
+}
+/* .atlas-timeline {
+  width: 100vw;
+  overflow-y: auto;
+  background: transparent;
+} */
+
+/* 1) Heading & neon glow */
+.timeline-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.5rem;
+  background: linear-gradient(90deg, #0ff, #a0f, #00f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  text-align: center;
+  animation: flickerPulse 4s ease-in-out infinite alternate;
+}
+
+.timeline-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, #00ffe0, #ff00ff);
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+
+.panel.active .timeline-title::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+@keyframes flickerPulse {
+  0%   { text-shadow: 0 0 4px #0ff; }
+  100% { text-shadow: 0 0 15px #0ff, 0 0 25px #a0f; }
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow:
+      0 0 8px rgba(0,255,255,0.2),
+      0 0 12px rgba(74,144,226,0.4),
+      0 0 20px rgba(144,19,254,0.2);
+  }
+  100% {
+    text-shadow:
+      0 0 12px rgba(0,255,255,0.4),
+      0 0 18px rgba(74,144,226,0.6),
+      0 0 28px rgba(144,19,254,0.4);
+  }
+}
+
+@keyframes underlineGlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+
+
+.neon-glow {
+  color: #4a90e2;
+  text-shadow:
+    0 0 8px  #4a90e2,
+    0 0 16px #9013fe;
+}
+
+/* 2) Controls */
+.timeline-wrapper {
+  position: relative;
+  padding: 0 1rem 2rem;
+}
+.timeline-controls {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.timeline-controls button {
+  padding: 0.6rem 1.4rem;
+  margin: 0 0.5rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  background: rgba(0, 224, 255, 0.1);
+  color: #00e0ff;
+  border: 1px solid #00e0ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.2);
+}
+
+.timeline-controls button:hover,
+.timeline-controls button.active {
+  background: #00e0ff;
+  color: #111;
+  box-shadow:
+    0 0 12px #00e0ff,
+    0 0 18px #9b00ff;
+}
+
+/* 3) Section‐specific entry margins */
+.experience .timeline-entry.left {
+  margin-right: 55%;
+}
+.experience .timeline-entry.right {
+  margin-left: 55%;
+}
+.education .timeline-entry.left {
+  margin-right: 55%;
+}
+.education .timeline-entry.right {
+  margin-left: 55%;
+}
+
+/* 4) Container & center “wall” line */
+.timeline-container {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+.line {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 47.5%;
+  transform: translateX(50%);
+  width: 6px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #00e0ff 0px,
+    #00e0ff 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  box-shadow: 0 0 12px #00e0ff, 0 0 24px #9b00ff;
+  border-radius: 10px;
+}
+/* draw downward */
+.line.drawn {
+  animation: drawLine 1s ease-out forwards;
+}
+/* reverse upward */
+.line.reversed {
+  animation: undrawLine 1s ease-out forwards;
+}
+@keyframes drawLine {
+  from { height: 0; }
+  to   { height: 100%; }
+}
+@keyframes undrawLine {
+  from { height: 100%; }
+  to   { height: 0; }
+}
+
+/* 5) Entries—never cross the wall */
+.timeline-entry {
+  position: relative;
+  width: 45%;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 224, 255, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 0 10px rgba(0, 224, 255, 0.1),
+    0 0 20px rgba(144, 19, 254, 0.05);
+  animation: fadeUp 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+/* 6) Markers always visible */
+.marker {
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  font-size: 1rem;
+  opacity: 1;
+}
+
+/* 7) Bullet points: 70% size, wrap & typewriter */
+.points {
+  padding-left: 1.8rem;
+  font-size: 0.9rem;
+}
+.points li {
+  margin-bottom: 0.5rem;
+  color: #efeef5;
+  font-size: 0.8em;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+.points li span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(var(--offsetX));
+  animation: letterReveal 0.05s forwards ease-out;
+}
+.points li span:nth-child(odd)  { --offsetX: -10px; }
+.points li span:nth-child(even) { --offsetX:  10px; }
+@keyframes letterReveal {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 8) Date & text */
+.date {
+  font-weight: 800;
+  color: #df720c;
+  margin-bottom: 0.25rem;
+}
+h3 {
+  margin: 0.25rem 0;
+  font-size: 1.2rem;
+}
+small {
+  display: block;
+  opacity: 0.75;
+  margin-bottom: 0.5rem;
+}

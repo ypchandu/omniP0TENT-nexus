@@ -1,0 +1,227 @@
+/* You can add global styles to this file, and also import other style files */
+/* 2.2.1: CSS Reset (minimal) */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+}
+/* 2.2.2: Color & font variables */
+:root {
+  /* Core palette */
+  --color-dark-1: #0a1625;
+  --color-dark-2: #09101f;
+  --color-neon-blue: #48b5e8;
+  --color-neon-purple: #b548e8;
+  --color-text-light: #eef2f7;
+
+  /* Typography */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Source Code Pro', monospace;
+}
+
+/* 2.2.3: Global base styles */
+body {
+  background: var(--color-dark-1);
+  color: var(--color-text-light);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--color-neon-blue);
+  text-decoration: none;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+
+/* ============ Mobile Responsive Tweaks ============ */
+@media (max-width: 768px) {
+
+  /* 1) Collapse your navbar into a vertical menu / hamburger */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .navbar .menu {
+    display: none;            /* hide the normal links */
+  }
+  .navbar .hamburger {
+    display: block;           /* show your mobile toggle */
+  }
+
+  /* 2) Turn your horizontal panels into a vertical scroll */
+  .signal-contact-wrapper,
+  .projects-frame,
+  .carousel-section {
+    display: block;
+    overflow-x: visible;      /* allow vertical scroll instead */
+    padding: 0 1rem;
+  }
+  .signal-panel,
+  .projects-page {
+    width: 100% !important;
+    margin-bottom: 2rem;
+  }
+  .projects-track {
+    width: 100% !important;
+    transform: translateX(0) !important;
+  }
+
+  /* 3) Revert any vertical-writing text back to horizontal */
+  .vertical-text, .timeline-marker span {
+    writing-mode: horizontal-tb !important;
+    transform: none !important;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  /* 4) Hide heavy scrollbars/overlays */
+  .arrow, .scrollbar {
+    display: none !important;
+  }
+
+  /* 5) Make cards full-width with reasonable height */
+  .project-card, .skill-box, .cert-card {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin: 0 auto 1.5rem;
+  }
+
+  /* 6) Ensure videos/images fill their container */
+  video, img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .resume-button,
+.mobile-disclaimer {
+  display: none;
+}
+}
+
+/* ====================================== */
+/* Mobile‐first base styles (if any)      */
+/* —————————————————————————————— */
+/* (your existing global CSS here…)       */
+
+/* ====================================== */
+/* Mobile Fixes for ≤ 420px wide devices  */
+/* ====================================== */
+/* ───────── Mobile / Phablet Overrides  (≤420px) ───────── */
+/* ──────── Mobile Overrides (≤420px) ──────── */
+/* ─── Mobile Overrides for ≤420px ─── */
+@media only screen and (max-width: 420px) {
+
+  .hero-video {
+    display: none !important;
+  }
+  html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ─── PIN THE NAVBAR ─── */
+  .navbar {
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    z-index: 1001;
+    background: var(--color-dark-2);
+    padding: 0.5rem 1rem !important;
+  }
+  .navbar__links {
+    margin-top: 0.5rem;
+  }
+
+  /* ─── HERO SECTION PADDING ─── */
+  
+  .hero-video__media {
+    height: auto !important;
+    object-fit: cover !important;
+  }
+  .overlay {
+    padding: 4rem 1rem !important;
+  }
+  .content {
+    /* shift content slightly upward if needed */
+    transform: translate(-50%, -60%) !important;
+  }
+
+  /* ─── HIDE TIMELINE & SKILLS ─── */
+  #timeline,
+  app-atlas-timeline,
+  .panel--skills {
+    display: none !important;
+  }
+
+  /* ─── PROJECTS & FOOTER ─── */
+  .projects-track {
+    display: block !important;
+    transform: none !important;
+  }
+  .projects-page {
+    width: 100% !important;
+    padding: 0 1rem !important;
+  }
+  .project-card {
+    margin-bottom: 1rem !important;
+  }
+  .footer,
+  .footer-video {
+    width: 100vw !important;
+    height: auto !important;
+  }
+
+  /* ─── REMOVE DESKTOP CHROME ─── */
+  .arrow,
+  .scrollbar {
+    display: none !important;
+  }
+  .resume-button {
+    display: block !important;
+    position: fixed;
+    bottom: 3.5rem;         /* lifted to make room for disclaimer */
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      90deg,
+      var(--color-neon-blue),
+      var(--color-neon-purple)
+    );
+    color: #fff;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Show & style disclaimer under button */
+  .mobile-disclaimer {
+    display: block !important;
+    position: fixed;
+    bottom: 0.5rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    z-index: 1000;
+    padding: 0 1rem;
+  }
+}

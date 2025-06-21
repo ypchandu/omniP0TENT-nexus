@@ -1,0 +1,45 @@
+/* atlas-timeline.component.css */
+.timeline {
+  position: relative;
+  padding: 3rem 1rem;
+  background: var(--color-dark-1);
+  color: var(--color-text-light);
+}
+
+.timeline__container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.timeline__container::before {
+  left: 50%;
+}
+
+.entry {
+  position: relative;
+  width: calc(50% - 40px);
+  margin: 1.5rem 0;
+  padding: 1rem 2rem;
+}
+
+/* Align left or right */
+.entry.left {
+  left: 0;
+  text-align: right;
+}
+.entry:not(.left) {
+  left: 50%;
+}
+
+@media (max-width: 768px) {
+  /* Stack entries on mobile */
+  .entry, .entry.left, .entry:not(.left) {
+    width: 100%;
+    left: 0 !important;
+    text-align: left;
+  }
+  .timeline__container::before {
+    left: 20px;
+  }
+}

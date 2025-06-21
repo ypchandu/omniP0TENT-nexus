@@ -1,0 +1,78 @@
+/* Wrapper for horizontal pin/scroll */
+.carousel-wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Common panel styling */
+.panel {
+  flex: 0 0 100vw;
+  padding: 2rem;
+  box-sizing: border-box;
+  background: #0a1e3d;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Panel 1 – About */
+.panel--about .about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.panel--about .about-img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 2rem;
+}
+.panel--about .about-text {
+  max-width: 600px;
+}
+.panel--about .about-text h2 {
+  margin-bottom: 1rem;
+}
+
+/* Toggleable lists */
+.panel h3 {
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  user-select: none;
+}
+.panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.panel ul.open {
+  max-height: 500px;
+}
+.panel li {
+  margin: 0.5rem 0;
+  font-size: 1.125rem;
+}
+
+/* Certifications grid */
+.certs-panel .cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.certs-panel img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  transition: transform 0.3s;
+}
+.certs-panel img:hover {
+  transform: translateY(-5px);
+}

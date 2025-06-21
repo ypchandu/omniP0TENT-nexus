@@ -1,0 +1,53 @@
+/* overall section spacing is inherited by your wrapper */
+.skills__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.skills__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 1.5rem;
+  justify-items: center; 
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* make cards slightly lighter than the section bg */
+.skills__category {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 280px;          /* ensures consistent card sizes */
+  box-sizing: border-box;
+}
+
+
+.skills__cat-title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-1);
+  color: var(--title-color);
+  text-align: center;
+}
+
+.skills__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills__list li {
+  font-size: var(--normal-font-size);
+  margin-bottom: var(--mb-0-5);
+  color: var(--text-color-light);
+}
+
+/* collapse to one column on mobile */
+@media (max-width: 400px) {
+  .skills__container {
+    grid-template-columns: 1fr;
+  }
+}

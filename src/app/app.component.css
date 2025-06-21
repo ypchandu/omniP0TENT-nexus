@@ -1,0 +1,55 @@
+/* src/app/app.component.css */
+
+/* 1) Global reset & no horizontal overflow */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  overflow-x: hidden;
+    overflow-x: hidden;
+    height: 100%;
+  scroll-padding-top: 80px;
+}
+
+/* 2) Main content container */
+.main-content {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  width: 100%;
+  overflow: hidden;       /* avoid parent scrollbars during carousel pin */
+}
+
+/* 3) Each top-level section is full-viewport width */
+section#about,
+section#chrono,
+section#timeline,
+section#projects,
+section#contact {
+  width: 100vw;
+  overflow: hidden;
+  scroll-snap-align: start;
+
+  
+}
+
+/* 4) Spacing for standard vertical sections */
+section#timeline,
+section#projects,
+section#contact {
+  padding: 0;
+  scroll-snap-align: start;
+
+}
+
+/* 5) Optional: footer or bottom component styling */
+app-glyph-type {
+  display: block;
+  padding: 2rem;
+  background: #0a1e3d;
+  color: #fff;
+  text-align: center;
+  font-size: 0.875rem;
+}

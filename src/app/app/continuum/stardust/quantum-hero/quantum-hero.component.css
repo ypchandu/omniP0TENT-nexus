@@ -1,0 +1,17 @@
+.quantum-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: radial-gradient(circle at center, #1b263b, #0f1a2e);
+  color: #f0f4f8;
+}
+
+.quantum-hero__greeting {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.quantum-hero__typewriter {
+  font-size: 1.8rem;
+  font-family: 'Courier New', monospace;
+  min-height: 2.2rem; /* reserve space for the text */
+}

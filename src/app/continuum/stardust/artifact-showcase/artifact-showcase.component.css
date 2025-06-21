@@ -1,0 +1,149 @@
+:host {
+  display: block;
+  margin: 0;
+  padding: 4 ;
+}
+.projects-carousel {
+  width: 100vw;                  /* fill the container, not the viewport */                    /* reset any parent margins */
+
+  padding: 5rem;             /* your vertical breathing room */
+  box-sizing: border-box;       /* include padding in width calculations */
+  background:
+    #111 url('/assets/photon/work.png') no-repeat center top/cover fixed;
+  /* shorthand for background-color + image + position/size + attachment */
+  color: #eee;
+  overflow: hidden;
+  --neon-accent: #4a90e2;
+}
+.card-front {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;   /* clip anything outside the box */
+  border-radius: 8px; /* keep your rounded corners */
+}
+.projects-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.project-img {
+  display: block;      /* remove inline‐image quirks */
+  width: 100%;         /* fill parent width */
+  height: 100%;        /* fill parent height */
+  object-fit: cover;   /* crop/scale so no empty space */
+}
+.projects-header h2 {
+  font-size: 2.5rem;
+  color: var(--neon-accent);
+  text-shadow:
+    0 0 8px var(--neon-accent),
+    0 0 16px var(--neon-accent);
+}
+.projects-header span {
+  opacity: 0.7;
+}
+
+/* Frame & track */
+.projects-frame {
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.projects-track {
+  display: flex;
+  width: 200%;             /* two pages */
+  transition: transform 0.6s ease;
+}
+
+/* Page grid */
+.projects-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  /* give 1.5rem horizontal gap, 2rem vertical gap */
+  gap: 2rem 1.5rem;
+
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+
+/* Card 3D flip */
+.project-card {
+  aspect-ratio: 1 / 1;
+  perspective: 800px;
+}
+.project-card a {
+  display: block;
+  width: 100%; height: 100%;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+.project-card:hover a {
+  transform: rotateY(540deg);
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%; height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+
+.card-front {
+  background: #222;
+}
+.card-back {
+  background: var(--neon-accent);
+  color: #111;
+  transform: rotateY(180deg);
+  padding: 1rem;
+  text-align: center;
+}
+
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 60px;
+  background: rgba(0,0,0,0.5);
+  color: var(--neon-accent);
+  font-size: 2.5rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow:
+    0 0 8px var(--neon-accent),
+    0 0 16px var(--neon-accent);
+}
+.arrow.prev { left: 0; border-top-right-radius: 30px; border-bottom-right-radius: 30px; }
+.arrow.next { right: 0; border-top-left-radius: 30px; border-bottom-left-radius: 30px; }
+.arrow:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.arrow:active {
+  transform: scale(0.95);
+}
+
+.arrow:focus {
+  outline: none;
+}
+.arrow:focus-visible {
+  box-shadow: 0 0 0 2px var(--neon-accent);
+}

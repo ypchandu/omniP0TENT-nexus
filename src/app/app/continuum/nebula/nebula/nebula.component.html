@@ -1,0 +1,12 @@
+<section class="nebula">
+  <h2 class="nebula__title">Warp Packs</h2>
+  <ul class="nebula__list">
+    <li *ngFor="let pack of warpPacks" class="nebula__item">
+      <i class="nebula__icon icon-{{pack.icon}}"></i>
+      <div class="nebula__info">
+        <h3>{{ pack.name }}</h3>
+        <p>{{ pack.description }}</p>
+      </div>
+    </li>
+  </ul>
+</section>
