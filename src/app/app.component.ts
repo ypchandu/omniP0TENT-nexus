@@ -2,6 +2,9 @@ import { Component }            from '@angular/core';
 import { CommonModule }         from '@angular/common';
 import { NavbarComponent }      from './continuum/navbar/navbar.component';
 import { HeroVideoComponent }   from './continuum/hero-video/hero-video.component';
+// Update the import path to a relative path if the file exists in the shared folder
+import { SectionParticlesComponent } from './shared/section-particles/section-particles.component';
+
 import { ChronoBioComponent }   from './continuum/stardust/chrono-bio/chrono-bio.component';
 import { AtlasTimelineComponent }
                                  from './continuum/stardust/atlas-timeline/atlas-timeline.component';
@@ -14,6 +17,7 @@ import { GlyphTypeComponent }
 
 @Component({
   selector: 'app-root',
+  
   standalone: true,
   imports: [
     CommonModule,
@@ -24,9 +28,14 @@ import { GlyphTypeComponent }
     AtlasTimelineComponent,
     ArtifactShowcaseComponent,
     SignalTowerComponent,
+    SectionParticlesComponent
 
   ],
   templateUrl: './app.component.html',
   styleUrls:   ['./app.component.css']
 })
-export class AppComponent {}
+export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+}

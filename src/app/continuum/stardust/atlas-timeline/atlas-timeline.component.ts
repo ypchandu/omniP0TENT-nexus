@@ -4,9 +4,14 @@ import {
   ElementRef,
   ViewChild
 } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
+import { SectionParticlesComponent } from '../shared/section-particles/section-particles.component';
 @Component({
   selector: 'app-atlas-timeline',
+  imports: [
+    CommonModule,
+    SectionParticlesComponent  
+  ],
   templateUrl: './atlas-timeline.component.html',
   styleUrls: ['./atlas-timeline.component.css']
 })

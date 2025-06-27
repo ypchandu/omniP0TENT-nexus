@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
+import { SectionParticlesComponent } from '../shared/section-particles/section-particles.component';
 @Component({
   selector: 'app-artifact-showcase',
+  imports: [
+    CommonModule,
+    SectionParticlesComponent  
+  ],
   templateUrl: './artifact-showcase.component.html',
   styleUrls: ['./artifact-showcase.component.css']
 })

@@ -6,12 +6,21 @@ import {
 } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { CommonModule } from '@angular/common';
+// Update the path below to the correct relative location of section-particles.component
+// Update the path below to the correct relative location of section-particles.component
+import { SectionParticlesComponent } from '../shared/section-particles/section-particles.component';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-chrono-bio',
   standalone: true,
+  imports: [
+    CommonModule,
+    SectionParticlesComponent  
+  ],
   templateUrl: './chrono-bio.component.html',
   styleUrls: ['./chrono-bio.component.css']
 })
@@ -24,7 +33,7 @@ export class ChronoBioComponent implements AfterViewInit {
   stats = [
     { icon: 'fas fa-briefcase',       value: 2, suffix: '+', label: 'Experience' },
     { icon: 'fas fa-project-diagram', value: 5, suffix: '+', label: 'Projects'   },
-    { icon: 'fas fa-building',        value: 3, suffix: '+', label: 'Companies'  },
+    { icon: 'fas fa-certificate',     value: 4, suffix: '+', label: 'Certificates'  },
   ];
 
 ngAfterViewInit() {
@@ -58,7 +67,7 @@ ngAfterViewInit() {
       x: -totalScrollWidth,
       ease: 'none',
       scrollTrigger: {
-        trigger: container,  // ✅ Use outer container
+        trigger: container, 
         start: 'top top',
         end: `+=${totalScrollWidth}`,
         scrub: 1.25,
@@ -139,7 +148,7 @@ ngAfterViewInit() {
           scrollTrigger: {
             trigger: card,
             start: 'top 85%',
-            once: true // ✅ Only animate once and stay
+            once: true // 
           }
         }
       );

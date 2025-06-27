@@ -9,6 +9,8 @@
   <base href="/">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
   <link
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&family=Source+Code+Pro&display=swap"
   rel="stylesheet"
@@ -21,12 +23,32 @@
   referrerpolicy="no-referrer"
 />
 <!-- particles.js via CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  
+      <div id="splash-screen">
+        <div id="particles-js"></div>
+    <h1 class="splash-text">
+      <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
+      <span> </span>
+      <span>t</span><span>o</span>
+      <span> </span>
+      <span>m</span><span>y</span>
+      <span> </span>
+      <span>c</span><span>o</span><span>r</span><span>n</span><span>e</span><span>r</span>
+      <span> </span>
+      <span>o</span><span>n</span>
+      <span> </span>
+      <span>t</span><span>h</span><span>e</span>
+      <span> </span>
+      <span>i</span><span>n</span><span>t</span><span>e</span><span>r</span><span>n</span><span>e</span><span>t</span>
+    </h1>
+  </div>
   <a href="assets/Yangala_PremChand_Resume.pdf" class="resume-button" download>
     View Resume
   </a>
@@ -36,6 +58,47 @@
   <app-root>
 
   </app-root>
+  <script>
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const splash = document.getElementById('splash-screen');
+      if (splash) {
+        splash.style.display = 'none';
+      }
+    }, 4300); // wait for all letters to finish animating
+  });
+</script>
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 40 },
+      size: { value: 5 },
+      color: { value: "#48b5e8" },
+      line_linked: {
+        enable: true,
+        color: "#b548e8",
+        opacity: 0.9
+      },
+      move: {
+        speed: 2
+      }
+    },
+    interactivity: {
+      events: {
+        onhover: { enable: true, mode: "repulse" }
+      }
+    }
+  });
+
+  // Hide splash screen after animation
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const splash = document.getElementById('splash-screen');
+      if (splash) splash.style.display = 'none';
+    }, 4500);
+  });
+</script>
+
 </body>
 </html>
 

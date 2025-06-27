@@ -20,6 +20,9 @@ export class HeroVideoComponent implements AfterViewInit {
   displayedText = '';
   fullTexts = [
     'YANGALA PREM CHAND',
+    'YANGALA PREM CHAND',
+    'YANGALA PREM CHAND',
+    'YANGALA PREM CHAND',
     'Data Analyst',
     'ML Enthusiast',
     'Product Strategist',

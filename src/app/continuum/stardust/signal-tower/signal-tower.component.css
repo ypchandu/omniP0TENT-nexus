@@ -418,6 +418,38 @@
   filter: drop-shadow(0 0 3px #48b5e8);
   transition: transform 0.3s;
 }
+/* Add these to your existing CSS */
+
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  background: #48b5e8;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.particle-line {
+  position: absolute;
+  background: #b548e8;
+  transform-origin: 0 0;
+  z-index: 1;
+}
+
+/* Add to your existing .signal-contact-wrapper */
+.signal-contact-wrapper {
+  position: relative;
+  overflow: hidden;
+}
 
 .neon-link::before {
   content: '';

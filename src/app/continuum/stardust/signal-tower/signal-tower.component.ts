@@ -15,6 +15,14 @@ export class SignalTowerComponent implements AfterViewInit {
   // 1️⃣ Hook up the video
   @ViewChild('footerVid', { static: true })
   footerVid!: ElementRef<HTMLVideoElement>;
+  particles: any[] = [];
+  particleCount = 40;
+  particleSize = 5;
+  particleSpeed = 2;
+  connectionDistance = 100;
+  mouseX = 0;
+  mouseY = 0;
+  animationFrameId: number | null = null;
 
   constructor(
     private el: ElementRef,
@@ -22,13 +30,165 @@ export class SignalTowerComponent implements AfterViewInit {
   ) {}
 
   ngAfterViewInit(): void {
-    // initialize all your features
     this.initFormInteractions();
-    this.createParticleField();
     this.initButtonEscape();
-
-    // finally, force the video to autoplay
     this.retryAutoplay(this.footerVid.nativeElement);
+    this.initParticles();
+    this.setupMouseTracking();
+  }
+
+  private initParticles(): void {
+    const container = this.el.nativeElement.querySelector('.particles-container');
+    if (!container) return;
+    
+    // Clear existing particles
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
+    
+    // Create new particles
+    for (let i = 0; i < this.particleCount; i++) {
+      const particle = this.renderer.createElement('div');
+      this.renderer.addClass(particle, 'particle');
+      
+      // Set initial position and properties
+      const posX = Math.random() * container.clientWidth;
+      const posY = Math.random() * container.clientHeight;
+      const size = this.particleSize;
+      
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${posX}px`;
+      particle.style.top = `${posY}px`;
+      particle.style.backgroundColor = '#48b5e8';
+      particle.style.borderRadius = '50%';
+      particle.style.position = 'absolute';
+      particle.style.zIndex = '1';
+      
+      // Store particle data
+      this.particles.push({
+        element: particle,
+        x: posX,
+        y: posY,
+        vx: (Math.random() - 0.5) * this.particleSpeed,
+        vy: (Math.random() - 0.5) * this.particleSpeed
+      });
+      
+      this.renderer.appendChild(container, particle);
+    }
+    
+    // Start animation loop
+    this.animateParticles();
+  }
+
+  private setupMouseTracking(): void {
+    const container = this.el.nativeElement.querySelector('.signal-contact-wrapper');
+    if (!container) return;
+    
+    this.renderer.listen(container, 'mousemove', (event) => {
+      this.mouseX = event.clientX;
+      this.mouseY = event.clientY;
+    });
+  }
+
+  private animateParticles(): void {
+    const container = this.el.nativeElement.querySelector('.particles-container');
+    if (!container) return;
+    
+    const update = () => {
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      
+      this.particles.forEach((p, i) => {
+        // Apply mouse repulsion
+        const dx = p.x - this.mouseX;
+        const dy = p.y - this.mouseY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < 150) {
+          const force = (150 - distance) / 50;
+          p.vx += (dx / distance) * force;
+          p.vy += (dy / distance) * force;
+        }
+        
+        // Update position
+        p.x += p.vx;
+        p.y += p.vy;
+        
+        // Bounce off walls
+        if (p.x < 0 || p.x > width) {
+          p.vx *= -0.8;
+          p.x = p.x < 0 ? 0 : width;
+        }
+        if (p.y < 0 || p.y > height) {
+          p.vy *= -0.8;
+          p.y = p.y < 0 ? 0 : height;
+        }
+        
+        // Apply friction
+        p.vx *= 0.98;
+        p.vy *= 0.98;
+        
+        // Update element position
+        p.element.style.left = `${p.x}px`;
+        p.element.style.top = `${p.y}px`;
+      });
+      
+      // Draw connections
+      this.drawConnections();
+      
+      // Continue animation
+      this.animationFrameId = requestAnimationFrame(update);
+    };
+    
+    this.animationFrameId = requestAnimationFrame(update);
+  }
+
+  private drawConnections(): void {
+    const container = this.el.nativeElement.querySelector('.particles-container');
+    if (!container) return;
+    
+    // Clear existing connections
+    const existingLines = container.querySelectorAll('.particle-line');
+    existingLines.forEach((line: Element) => line.remove());
+    
+    // Draw new connections
+    for (let i = 0; i < this.particles.length; i++) {
+      for (let j = i + 1; j < this.particles.length; j++) {
+        const p1 = this.particles[i];
+        const p2 = this.particles[j];
+        
+        const dx = p1.x - p2.x;
+        const dy = p1.y - p2.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < this.connectionDistance) {
+          const line = this.renderer.createElement('div');
+          this.renderer.addClass(line, 'particle-line');
+          
+          const angle = Math.atan2(dy, dx);
+          const length = distance;
+          
+          line.style.width = `${length}px`;
+          line.style.height = '1px';
+          line.style.position = 'absolute';
+          line.style.left = `${p1.x}px`;
+          line.style.top = `${p1.y}px`;
+          line.style.transform = `rotate(${angle}rad)`;
+          line.style.transformOrigin = '0 0';
+          line.style.backgroundColor = '#b548e8';
+          line.style.opacity = `${1 - (distance / this.connectionDistance)}`;
+          line.style.zIndex = '0';
+          
+          this.renderer.appendChild(container, line);
+        }
+      }
+    }
+  }
+  ngOnDestroy(): void {
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId);
+    }
   }
 
   /** Force-play a muted video, retrying on click/scroll if blocked */
