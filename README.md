@@ -21,21 +21,21 @@ The project originally drew inspiration from React structures but evolved to emp
 
 - **`src/assets/photon/`**: Public assets and core visual elements (e.g., `Quantam-hero.jpeg`).
 - **`src/app/continuum/`**: The main application source layer (time and space of the app).
-  - **`nebula/`**: Stores static assets such as images, certificates, and project thumbnails.
-  - **`stardust/`**: Contains all interactive UI Components:
-    - `quantum-hero`: Landing page and hero introduction.
-    - `chrono-bio`: "About Me" and biography sections.
-    - `atlas-timeline`: Education, experience, and certifications timeline.
-    - `artifact-showcase`: Project showcases and interactive details.
-    - `signal-tower`: Contact form and professional links.
+  - **`nebula/`**: Stores static assets
+  - **`stardust/`**:
+    - `quantum-hero`:
+    - `chrono-bio`:
+    - `atlas-timeline`:
+    - `artifact-showcase`: 
+    - `signal-tower`:
   - **`fabric/`**: Global styles, CSS variables, and component-specific formatting overrides.
 
 ## 💻 Development Server
-To launch the nexus locally:
+To launch :
 ```bash
-ng serve
+https://omnipotent-nexus.netlify.app/
 ```
-Navigate to `http://localhost:4200/`. The application will automatically reload if you modify any source code.
+Navigate to `https://omnipotent-nexus.netlify.app/`. The application will automatically reload if you modify any source code.
 
 ## 📚 Additional Resources
 *Initial Architecture Planning Notes and Concept Sketches:*
@@ -45,6 +45,7 @@ Navigate to `http://localhost:4200/`. The application will automatically reload 
 
 ### Architecture Note 2
 ![Architecture Note 2](./src/assets/docs/2.jpeg)
+
 
 
 
