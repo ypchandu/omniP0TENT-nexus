@@ -42,3 +42,6 @@ Navigate to `http://localhost:4200/`. The application will automatically reload 
 
 ### Architecture Note 2
 ![Architecture Note 2](./src/assets/docs/2.jpeg)
+
+### Test Image
+![Test Image](./src/assets/docs/Test.png)
