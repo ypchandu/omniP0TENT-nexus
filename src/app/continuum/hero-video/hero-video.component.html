@@ -1,21 +1,13 @@
 <section #heroSection class="hero-video" [class.scrolled]="scrolled">
-  <video
-    #introVid
-    class="hero-video__media"
-    autoplay
-    muted
-    playsinline
-    loop
-    preload="auto"
-  >
+  <video #introVid class="hero-video__media desktop-only" autoplay muted playsinline loop preload="auto">
     <source src="assets/intro.mp4" type="video/mp4" />
   </video>
 
   <!-- SCROLL-BASED BLACK OVERLAY -->
-  <div class="hero-video-dark"></div>
+  <div class="hero-video-dark desktop-only"></div>
 
   <!-- Centered Content -->
-  <div class="hero-overlay">
+  <div class="hero-overlay desktop-only">
     <div class="hero-content">
       <h2 class="hero-title">
         <span>{{ displayedText }}</span><span class="cursor">|</span>
@@ -23,16 +15,27 @@
       <p class="hero-subtitle">
         Data Analyst &amp; Aspiring Data Scientist turning complex datasets into high-impact insights
       </p>
-      <a
-        class="resume-button"
-        href="assets/photon/Quantam Hero Resume.pdf"
-        target="_blank"
-        rel="noopener"
-      >
+      <a class="resume-button" href="assets/photon/Quantam Hero Resume.pdf" target="_blank" rel="noopener">
         View Resume
       </a>
     </div>
   </div>
+  <!-- Mobile-only Static Block -->
+  <div class="mobile-hero-overlay mobile-only">
+    <div class="mobile-hero-content">
+      <p class="greeting">Hello!</p>
+      <h1 class="name">I'm <br /><span class="highlight">Yangala Prem chand</span></h1>
+      <p class="role">Graduate Student at <a href="https://woolf.university/" target="_blank"
+          style="color: inherit; text-decoration: underline;">Woolf University</a></p>
+      <p class="degree">Masters in Data Science and AI</p>
 
+      <div class="action-buttons">
+        <a href="https://www.linkedin.com/in/omnip0tent/" target="_blank" rel="noopener" class="mobile-btn">LinkedIn</a>
+        <a href="https://github.com/ypchandu" target="_blank" rel="noopener" class="mobile-btn">GitHub</a>
+        <a href="assets/photon/Quantam Hero Resume.pdf" target="_blank" rel="noopener"
+          class="mobile-btn resume-btn">View Resume</a>
+      </div>
+    </div>
+  </div>
 
 </section>

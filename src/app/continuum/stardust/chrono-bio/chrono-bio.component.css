@@ -31,15 +31,17 @@
   transform: translateZ(0);
 
   /* no explicit width: GSAP handles the translateX of each 100% panel */
-  gap: 2rem;                /* spacing between panels */
-  padding: 1rem;            /* breathing room at edges */
+  gap: 2rem;
+  /* spacing between panels */
+  padding: 1rem;
+  /* breathing room at edges */
 }
 
 /* 4) Panel base (exactly one viewport-wide each) */
 .panel {
   flex: 0 0 100vw;
   min-height: 100vh;
-  height: auto; 
+  height: auto;
   padding: 2rem;
   box-sizing: border-box;
   color: #06050b;
@@ -131,7 +133,7 @@
   border-radius: 10px;
   text-align: center;
   min-width: 100px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .stat-icon {
@@ -157,11 +159,13 @@
   transform: translateX(-60px);
   animation: fadeInLeft 5s forwards ease-out;
 }
+
 .fade-in-right {
   opacity: 0;
   transform: translateX(60px);
   animation: fadeInRight 5s forwards ease-out;
 }
+
 .zoom-in {
   opacity: 0;
   transform: scale(0.8);
@@ -169,13 +173,24 @@
 }
 
 @keyframes fadeInLeft {
-  to { opacity: 1; transform: translateX(0); }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
 @keyframes fadeInRight {
-  to { opacity: 1; transform: translateX(0); }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
 @keyframes zoomIn {
-  to { opacity: 1; transform: scale(1); }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .neon-highlight {
@@ -213,15 +228,16 @@
 @keyframes pulse-glow {
   0% {
     text-shadow:
-      0 0 8px rgba(0,255,255,0.2),
-      0 0 12px rgba(74,144,226,0.4),
-      0 0 20px rgba(144,19,254,0.2);
+      0 0 8px rgba(0, 255, 255, 0.2),
+      0 0 12px rgba(74, 144, 226, 0.4),
+      0 0 20px rgba(144, 19, 254, 0.2);
   }
+
   100% {
     text-shadow:
-      0 0 12px rgba(0,255,255,0.4),
-      0 0 18px rgba(74,144,226,0.6),
-      0 0 28px rgba(144,19,254,0.4);
+      0 0 12px rgba(0, 255, 255, 0.4),
+      0 0 18px rgba(74, 144, 226, 0.6),
+      0 0 28px rgba(144, 19, 254, 0.4);
   }
 }
 
@@ -252,10 +268,11 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
-   margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
   position: relative;
   animation: glowPulse 2.5s infinite alternate;
 }
+
 .skills-title::after {
   content: '';
   position: absolute;
@@ -276,6 +293,7 @@
   0% {
     text-shadow: 0 0 10px rgba(0, 224, 255, 0.1);
   }
+
   100% {
     text-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
   }
@@ -296,6 +314,7 @@
     transform: rotateY(-25deg) rotateX(5deg) scale(0.95);
     opacity: 0;
   }
+
   to {
     transform: rotateY(0deg) rotateX(0deg) scale(1);
     opacity: 1;
@@ -318,14 +337,21 @@
 
 .panel--skills.in-view .skill-card {
   animation: fadeInUp 0.6s ease-out forwards;
-   min-height: 100vh;
+  min-height: 100vh;
   height: auto;
 }
 
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .skill-card h3 {
@@ -391,6 +417,7 @@
 .skill-list li:hover::after {
   opacity: 1;
 }
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -401,7 +428,7 @@
 }
 
 .skill-box {
-  
+
   background: rgba(255, 255, 255, 0.1);
   border: 4px solid transparent;
   border-image: linear-gradient(135deg, #00e0ff, #4a90e2, #9b00ff) 1;
@@ -413,7 +440,29 @@
     inset 0 0 6px rgba(255, 255, 255, 0.05);
   transform: translateY(50px) scale(0.9);
   transition: all 0.6s ease;
-  animation: neoBorder 5s linear infinite;
+  animation: neoBorder 4s linear infinite;
+}
+
+@keyframes neoBorder {
+  0% {
+    border-image-source: linear-gradient(0deg, #00e0ff, #4a90e2, #9b00ff);
+  }
+
+  25% {
+    border-image-source: linear-gradient(90deg, #00e0ff, #4a90e2, #9b00ff);
+  }
+
+  50% {
+    border-image-source: linear-gradient(180deg, #00e0ff, #4a90e2, #9b00ff);
+  }
+
+  75% {
+    border-image-source: linear-gradient(270deg, #00e0ff, #4a90e2, #9b00ff);
+  }
+
+  100% {
+    border-image-source: linear-gradient(360deg, #00e0ff, #4a90e2, #9b00ff);
+  }
 }
 
 
@@ -457,22 +506,48 @@
   border: 1px solid #00e0ff;
   color: #222;
   border-radius: 30px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   backdrop-filter: blur(3px);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+}
+
+/* Floating animation for all badges */
+@keyframes floatBadge {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.badge:nth-child(odd) {
+  animation: floatBadge 3s ease-in-out infinite;
+}
+
+.badge:nth-child(even) {
+  animation: floatBadge 3.5s ease-in-out infinite reverse;
 }
 
 .badge:hover {
   background: #00e0ff;
   color: #000;
-  transform: scale(1.1);
+  transform: scale(1.15) translateY(-5px);
   box-shadow:
-    0 0 12px #00e0ff,
-    0 0 18px #4a90e2;
+    0 0 15px #00e0ff,
+    0 0 30px #4a90e2,
+    0 0 45px #9b00ff;
+  z-index: 10;
+  border-color: #fff;
 }
 
 @media (max-width: 1024px) {
+
   .skills-grid,
   .certs-grid,
   .projects-page {
@@ -481,6 +556,7 @@
 }
 
 @media (min-width: 1025px) and (max-width: 1440px) {
+
   .skills-grid,
   .certs-grid,
   .projects-page {
@@ -536,6 +612,7 @@
   0% {
     text-shadow: 0 0 10px rgba(0, 224, 255, 0.1);
   }
+
   100% {
     text-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
   }
@@ -545,16 +622,21 @@
   0% {
     background-position: 0% 50%;
   }
+
   100% {
     background-position: 100% 50%;
   }
 }
+
 .certs-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-auto-rows: 300px;                 /* force row height */
+  grid-template-columns: repeat(2, 1fr);
+  /* 2 columns */
+  grid-auto-rows: 300px;
+  /* force row height */
   gap: 2rem;
-  width: 640px;                          /* 2 × 300px + gap */
+  width: 640px;
+  /* 2 × 300px + gap */
   margin: 0 auto;
 }
 
@@ -572,6 +654,7 @@
     inset 0 0 8px rgba(255, 255, 255, 0.02);
   animation: certGlowPulse 4s ease-in-out infinite alternate;
 }
+
 @keyframes certGlowPulse {
   0% {
     box-shadow:
@@ -579,6 +662,7 @@
       0 0 18px rgba(155, 0, 255, 0.1),
       inset 0 0 6px rgba(255, 255, 255, 0.01);
   }
+
   100% {
     box-shadow:
       0 0 18px rgba(0, 224, 255, 0.4),
@@ -598,6 +682,7 @@
   transform-style: preserve-3d;
   transition: transform 0.8s ease;
 }
+
 .cert-card:hover {
   transform: scale(1.02);
   box-shadow:
@@ -616,44 +701,87 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: 16px;
-  background: #4f05ee;
-  border: 2px solid transparent;
+}
+
+.cert-front {
   border-image: linear-gradient(135deg, #00e0ff, #9b00ff) 1;
   box-shadow: 0 0 12px rgba(0, 224, 255, 0.15);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+  /* Push text to bottom */
   align-items: center;
   padding: 1rem;
   text-align: center;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
 
+/* Remove img and use full background image inline via HTML instead */
 .cert-front img {
-  width: 60%;
-  height: auto;
-  max-height: 100px;
-  object-fit: contain;
-  margin-bottom: 1rem;
+  display: none;
 }
 
 .cert-front h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #222;
+  color: #fff;
+  /* better contrast */
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  margin-top: auto;
+  background: rgba(0, 0, 0, 0.5);
+  /* translucent backing so the white text reads clearly over bright images */
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px;
 }
 
 .cert-back {
   transform: rotateY(180deg);
-  background: #f2f2f2;
-  color: #111;
+  background: #0d2546;
+  color: #fff;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.cert-back .bg-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(14px) brightness(0.4);
+  z-index: -1;
+  /* place behind the content */
+  transform: scale(1.15);
+}
+
+.cert-back .cert-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .cert-back p {
   margin: 0.4rem 0;
   font-size: 0.95rem;
   font-weight: 500;
+  color: #fff;
 }
 
 .cert-link {
@@ -671,6 +799,7 @@
   background: #4a90e2;
   color: #fff;
 }
+
 .cert-badge {
   background: linear-gradient(90deg, #00e0ff, #9b00ff);
   color: #fff;
@@ -690,10 +819,12 @@
     transform: scale(1);
     box-shadow: 0 0 6px rgba(0, 224, 255, 0.4);
   }
+
   50% {
     transform: scale(1.08);
     box-shadow: 0 0 12px rgba(155, 0, 255, 0.6);
   }
+
   100% {
     transform: scale(1);
     box-shadow: 0 0 6px rgba(0, 224, 255, 0.4);
@@ -702,6 +833,7 @@
 
 
 @media (max-width: 768px) {
+
   .skills-grid,
   .certs-grid {
     grid-template-columns: 1fr;
@@ -714,6 +846,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .skills-grid,
   .certs-grid,
   .projects-page {
@@ -722,6 +855,7 @@
 }
 
 @media (min-width: 1025px) and (max-width: 1440px) {
+
   .skills-grid,
   .certs-grid,
   .projects-page {
@@ -730,6 +864,7 @@
 }
 
 @media (max-width: 768px) {
+
   .about-heading.neon-highlight,
   .skills-title,
   .cert-title {
@@ -749,4 +884,3 @@
     padding: 1.5rem 1rem;
   }
 }
-

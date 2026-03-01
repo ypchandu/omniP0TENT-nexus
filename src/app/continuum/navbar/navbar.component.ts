@@ -9,8 +9,13 @@ import { Component, HostListener, ViewChild, ElementRef, AfterViewInit, Renderer
 export class NavbarComponent implements AfterViewInit {
   @ViewChild('progress', { static: true }) progress!: ElementRef<HTMLDivElement>;
   scrolled = false;
+  menuOpen = false;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2) { }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 
   @HostListener('window:scroll', [])
   onScroll() {

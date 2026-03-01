@@ -1,156 +1,145 @@
 <section class="atlas-timeline">
   <app-section-particles></app-section-particles>
   <!-- Neon-glow heading -->
-   <div class="container">
-  <h2 class="timeline-title neon-glow">
-    My Journey Through Time
-  </h2>
+  <div class="container">
+    <h2 class="timeline-title neon-glow">
+      My Journey Through Time
+    </h2>
 
-  <div class="timeline-wrapper">
-    <!-- Toggle buttons -->
-    <div class="timeline-controls">
-      <button (click)="toggle('experience')" [class.active]="!showEducation">
-        Experience
-      </button>
-      <button (click)="toggle('education')" [class.active]="showEducation">
-        Education
-      </button>
+    <div class="timeline-wrapper">
+      <!-- Toggle buttons -->
+      <div class="timeline-controls">
+        <button (click)="toggle('experience')" [class.active]="!showEducation">
+          Experience
+        </button>
+        <button (click)="toggle('education')" [class.active]="showEducation">
+          Education
+        </button>
+      </div>
+
+      <!-- PROFESSIONAL EXPERIENCE -->
+      <div #expContainer class="timeline-container experience" [hidden]="showEducation">
+        <div class="line"></div>
+
+        <!-- 1) Lead Research Analyst -->
+        <div class="timeline-entry left">
+          <div class="marker">💼</div>
+          <div class="date">Aug 2024 – Present</div>
+          <h3>Lead Research Analyst</h3>
+          <small>
+            <a href="https://www.agilees.com" target="_blank">
+              Agile Enterprise Solutions Inc.
+            </a>
+            (
+            <a href="https://www.linkedin.com/company/equinox-consulting-pvt-ltd/?originalSubdomain=in" target="_blank">
+              Equinox Consulting Pvt. Ltd.
+            </a>
+            ), Hyderabad, India
+          </small>
+          <ul class="points">
+            <li>
+              Led a team of five data researchers, boosting outreach by 35% via advanced segmentation.
+            </li>
+            <li>
+              Built a VBA-powered SMTP engine to automate dispatch & tracking—
+              cutting manual tasks by 35% and raising CTR by 30% QoQ.
+            </li>
+            <li>
+              Managed daily data ingestion, dispatch & server performance monitoring.
+            </li>
+          </ul>
+        </div>
+
+        <!-- 2) Senior Research Analyst -->
+        <div class="timeline-entry right">
+          <div class="marker">💼</div>
+          <div class="date">Oct 2023 – Aug 2024</div>
+          <h3>Senior Research Analyst</h3>
+          <small>
+            <a href="https://www.talentlogic.com" target="_blank">
+              Talent Logic Inc.
+            </a>, Hyderabad, India
+          </small>
+          <ul class="points">
+            <li>
+              Scraped & processed 15,000+ company–contact pairs/month with Python pipelines.
+            </li>
+            <li>
+              Created Excel VBA macros for email validation & enrichment, improving accuracy by 35%.
+            </li>
+            <li>
+              Designed targeted campaigns that secured an $80K partnership deal.
+            </li>
+          </ul>
+        </div>
+
+        <!-- 3) Research Analyst -->
+        <div class="timeline-entry left">
+          <div class="marker">💼</div>
+          <div class="date">Feb 2023 – Oct 2023</div>
+          <h3>Research Analyst</h3>
+          <small>
+            <a href="https://petabytz.com" target="_blank">
+              PetaBytz Technologies Inc.
+            </a>, Hyderabad, India
+          </small>
+          <ul class="points">
+            <li>
+              Built Director-Level CRM Dashboards: Analyzed Freshworks CRM dashboards for strategic planning
+            </li>
+            <li>
+              Standardized KPIs across marketing & sales to boost alignment.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div #eduContainer class="timeline-container education" [hidden]="!showEducation">
+        <div class="line"></div>
+
+
+        <!-- 1) B.Tech in ECE -->
+        <div class="timeline-entry left">
+          <div class="marker">🎓</div>
+          <div class="date">Dec 2022</div>
+          <h3>B.Tech in Electronics &amp; Communication Engineering</h3>
+          <small>
+            <a href="https://www.amrita.edu" target="_blank">
+              Amrita University
+            </a>, Bangalore, India
+          </small>
+          <ul class="points">
+            <li>
+              Graduated with honors and completed hands-on deep-learning projects.
+            </li>
+            <li>
+              Key project: ASITEM—architectural sketch → 3D model via CNN + VGG-16.
+            </li>
+          </ul>
+        </div>
+
+
+        <!-- 4) Intermediate -->
+        <div class="timeline-entry right">
+          <div class="marker">🎓</div>
+          <div class="date">2016 – 2018</div>
+          <h3>Intermediate</h3>
+          <small>
+            <a href="https://www.narayanajuniorcolleges.com/" target="_blank">
+              Narayana Junior College
+            </a>
+          </small>
+          <ul class="points">
+            <li>
+              Completed intermediate education with top-tier academic performance.
+            </li>
+          </ul>
+        </div>
+
+        <!-- 5) B.Tech in ECE -->
+
+      </div>
     </div>
-
-    <!-- PROFESSIONAL EXPERIENCE -->
-    <div
-      #expContainer
-      class="timeline-container experience"
-      [hidden]="showEducation"
-    >
-      <div class="line"></div>
-
-      <!-- 1) Lead Research Analyst -->
-      <div class="timeline-entry left">
-        <div class="marker">💼</div>
-        <div class="date">Aug 2024 – Present</div>
-        <h3>Lead Research Analyst</h3>
-        <small>
-          <a href="https://www.agilees.com" target="_blank">
-            Agile Enterprise Solutions Inc.
-          </a>
-          (
-          <a href="https://www.linkedin.com/company/equinox-consulting-pvt-ltd/?originalSubdomain=in" target="_blank">
-            Equinox Consulting Pvt. Ltd.
-          </a>
-          ), Hyderabad, India
-        </small>
-        <ul class="points">
-          <li>
-            Led a team of five data researchers, boosting outreach by 35% via advanced segmentation.
-          </li>
-          <li>
-            Built a VBA-powered SMTP engine to automate dispatch & tracking—
-            cutting manual tasks by 35% and raising CTR by 30% QoQ.
-          </li>
-          <li>
-            Managed daily data ingestion, dispatch & server performance monitoring.
-          </li>
-        </ul>
-      </div>
-
-      <!-- 2) Senior Research Analyst -->
-      <div class="timeline-entry right">
-        <div class="marker">💼</div>
-        <div class="date">Oct 2023 – Aug 2024</div>
-        <h3>Senior Research Analyst</h3>
-        <small>
-          <a href="https://www.talentlogic.com" target="_blank">
-            Talent Logic Inc.
-          </a>, Hyderabad, India
-        </small>
-        <ul class="points">
-          <li>
-            Scraped & processed 15 000+ company–contact pairs/month with Python pipelines.
-          </li>
-          <li>
-            Created Excel VBA macros for email validation & enrichment, improving accuracy by 35%.
-          </li>
-          <li>
-            Designed targeted campaigns that secured an $80 K partnership deal.
-          </li>
-        </ul>
-      </div>
-
-      <!-- 3) Research Analyst -->
-      <div class="timeline-entry left">
-        <div class="marker">💼</div>
-        <div class="date">Feb 2023 – Oct 2023</div>
-        <h3>Research Analyst</h3>
-        <small>
-          <a href="https://petabytz.com" target="_blank">
-            PetaBytz Technologies Inc.
-          </a>, Hyderabad, India
-        </small>
-        <ul class="points">
-          <li>
-            Built Director-Level CRM Dashboards: Analyzed Fresh-works CRM dashboards for strategic planning
-          </li>
-          <li>
-            Standardized KPIs across marketing & sales to boost alignment.
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- EDUCATION -->
-    <div
-      #eduContainer
-      class="timeline-container education"
-      [hidden]="!showEducation"
-    >
-      <div class="line"></div>
-
-
-      <!-- 1) B.Tech in ECE -->
-             <div class="timeline-entry left">
-        <div class="marker">🎓</div>
-        <div class="date">Dec 2022</div>
-        <h3>B.Tech in Electronics &amp; Communication Engineering</h3>
-        <small>
-          <a href="https://www.amrita.edu" target="_blank">
-            Amrita University
-          </a>, Bangalore, India
-        </small>
-        <ul class="points">
-          <li>
-            Graduated with honors and completed hands-on deep-learning projects.
-          </li>
-          <li>
-            Key project: ASITEM—architectural sketch → 3D model via CNN + VGG-16.
-          </li>
-        </ul>
-      </div>
-
-
-      <!-- 4) Intermediate -->
-      <div class="timeline-entry right">
-        <div class="marker">🎓</div>
-        <div class="date">2016 – 2018</div>
-        <h3>Intermediate</h3>
-        <small>
-          <a
-            href="https://www.narayanajuniorcolleges.com/"
-            target="_blank"
-          >
-            Narayana Junior College
-          </a>
-        </small>
-        <ul class="points">
-          <li>
-            Completed intermediate education with top-tier academic performance.
-          </li>
-        </ul>
-      </div>
-
-      <!-- 5) B.Tech in ECE -->
-
-    </div>
-  </div>
   </div>
 </section>

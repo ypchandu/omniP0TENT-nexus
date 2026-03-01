@@ -6,167 +6,59 @@
   </div>
 
   <div class="projects-frame">
-    <div
-     class="projects-track"
-  [style.transform]="'translateX(' + (-currentPage * 50) + '%)'"
-    >
-      <!-- PAGE 1 -->
+    <div class="projects-track">
       <div class="projects-page">
-        <!-- Card A -->
-        <div class="project-card">
-          <a href="https://github.com/ypchandu/ASITEM" target="_blank">
+        <!-- Dynamic Cards -->
+        <div class="project-card" *ngFor="let project of projects">
+          <a href="#" (click)="openModal(project, $event)">
             <div class="card-front">
-              <img src="assets/projects/ASITEM.png" alt="Project A" class="project-img" />
+              <img [src]="project.image" [alt]="project.title" class="project-img" />
             </div>
             <div class="card-back">
+              <div class="card-back-bg" [style.background-image]="'url(' + project.image + ')'"></div>
+              <div class="card-back-overlay"></div>
               <div class="project-back-content">
-              <h3>ASITEM Architectural</h3>
-              <p>Developed a deep learning model that transforms architectural sketches into precise 3D models.</p>
-            </div>
-            </div>
-          </a>
-        </div>
-        <!-- Card B -->
-        <div class="project-card">
-          <a href="https://github.com/USERNAME/project-b" target="_blank">
-            <div class="card-front">
-              <img src="assets/projects/project-a.png" alt="Project B" class="project-img" />
-            </div>
-            <div class="card-back">
-              <h3>Project B</h3>
-              <p>A quick glimpse of Project B.</p>
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.shortDesc }}</p>
+                <span class="card-btn">View Details</span>
+              </div>
             </div>
           </a>
         </div>
-        <!-- Card C -->
-        <div class="project-card">
-          <a href="https://github.com/USERNAME/project-c" target="_blank">
-            <div class="card-front">
-              <img src="assets/projects/project-a.png" alt="Project C" class="project-img" />
-            </div>
-            <div class="card-back">
-              <h3>Project C</h3>
-              <p>A quick glimpse of Project C.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Card D -->
-        <div class="project-card">
-          <a href="https://github.com/USERNAME/project-d" target="_blank">
-            <div class="card-front">
-              <img src="assets/projects/project-a.png" alt="Project D" class="project-img" />
-            </div>
-            <div class="card-back">
-              <h3>Project D</h3>
-              <p>A quick glimpse of Project D.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Card E -->
-        <div class="project-card">
-          <a href="https://github.com/USERNAME/project-e" target="_blank">
-            <div class="card-front">
-              <img src="assets/projects/project-a.png" alt="Project E" class="project-img" />
-            </div>
-            <div class="card-back">
-              <h3>Project E</h3>
-              <p>A quick glimpse of Project E.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Card F -->
-        <div class="project-card">
-          <a href="https://github.com/USERNAME/project-f" target="_blank">
-            <div class="card-front">
-              <img src="assets/projects/project-a.png" alt="Project F" class="project-img" />
-            </div>
-            <div class="card-back">
-              <h3>Project F</h3>
-              <p>A quick glimpse of Project F.</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- PAGE 2 -->
-      <div class="projects-page">
-        <!-- Card G -->
-        <div class="project-card">
-          <a href="https://github.com/USERNAME/project-g" target="_blank">
-            <div class="card-front">
-              <img src="assets/projects/project-a.png" alt="Project G" class="project-img" />
-            </div>
-            <div class="card-back">
-              <h3>Project G</h3>
-              <p>A quick glimpse of Project G.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Card H -->
-        <div class="project-card">
-          <a href="https://github.com/USERNAME/project-h" target="_blank">
-            <div class="card-front">
-              <img src="assets/projects/project-a.png" alt="Project H" class="project-img" />
-            </div>
-            <div class="card-back">
-              <h3>Project H</h3>
-              <p>A quick glimpse of Project H.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Card I -->
-        <div class="project-card">
-          <a href="https://github.com/USERNAME/project-i" target="_blank">
-            <div class="card-front">
-              <img src="assets/projects/project-a.png" alt="Project I" class="project-img" />
-            </div>
-            <div class="card-back">
-              <h3>Project I</h3>
-              <p>A quick glimpse of Project I.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Card J -->
-        <div class="project-card">
-          <a href="https://github.com/USERNAME/project-j" target="_blank">
-            <div class="card-front">
-              <img src="assets/projects/project-a.png" alt="Project J" class="project-img" />
-            </div>
-            <div class="card-back">
-              <h3>Project J</h3>
-              <p>A quick glimpse of Project J.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Card K -->
-        <div class="project-card">
-          <a href="https://github.com/USERNAME/project-k" target="_blank">
-            <div class="card-front">
-              <img src="assets/projects/project-a.png" alt="Project K" class="project-img" />
-            </div>
-            <div class="card-back">
-              <h3>Project K</h3>
-              <p>A quick glimpse of Project K.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Card L -->
-        <div class="project-card">
-          <a href="https://github.com/USERNAME/project-l" target="_blank">
-            <div class="card-front">
-              <img src="assets/projects/project-a.png" alt="Project L" class="project-img" />
-            </div>
-            <div class="card-back">
-              <h3>Project L</h3>
-              <p>A quick glimpse of Project L.</p>
-            </div>
-          </a>
-        </div>
-
       </div>
     </div>
+  </div>
 
-    <button class="arrow prev" (click)="prevPage()">‹</button>
-    <button class="arrow next" (click)="nextPage()">›</button>
+  <!-- Project Details Modal -->
+  <div class="project-modal-backdrop" *ngIf="isModalOpen" (click)="closeModal()">
+    <div class="project-modal-content" (click)="$event.stopPropagation()">
+      <button class="close-modal-btn" (click)="closeModal()">&times;</button>
+
+      <div class="modal-body" *ngIf="selectedProject">
+        <div class="modal-image-container">
+          <img [src]="selectedProject.image" [alt]="selectedProject.title" class="modal-img" />
+        </div>
+
+        <div class="modal-info-container">
+          <h2 class="neon-modal-title">{{ selectedProject.title }}</h2>
+          <p class="modal-description">{{ selectedProject.shortDesc }}</p>
+
+          <div class="modal-insights">
+            <h3>Key Insights & Impact</h3>
+            <ul>
+              <li *ngFor="let insight of selectedProject.insights">
+                <i class="fas fa-check-circle"></i> {{ insight }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="modal-actions">
+            <a [href]="selectedProject.githubLink" target="_blank" class="github-link-btn">
+              <i class="fab fa-github"></i> View Repository
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

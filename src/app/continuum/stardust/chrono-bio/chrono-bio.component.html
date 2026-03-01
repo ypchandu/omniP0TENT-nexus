@@ -1,205 +1,220 @@
-
 <section class="carousel-section">
   <app-section-particles></app-section-particles>
   <!-- Optional: Background SVG -->
   <!-- <img src="assets/about-bg.svg" alt="Background" class="carousel-bg" aria-hidden="true" /> -->
 
-  
+
   <div #carousel class="carousel-wrapper">
-    
+
     <!-- Panel 1: About -->
- <div class="panel panel--about">
-  <div class="container">
-  <h2 class="about-heading neon-highlight">About Me</h2>
+    <div class="panel panel--about">
+      <div class="container">
+        <h2 class="about-heading neon-highlight">About Me</h2>
 
-  <div class="about-container">
-    <!-- Left: Profile -->
-    <div class="profile-wrapper">
-      <img
-        src="assets/quantum_hero.jpg"
-        alt="Profile"
-        class="about-img zoom-in"
-      />
-    </div>
+        <div class="about-container">
+          <!-- Left: Profile -->
+          <div class="profile-wrapper">
+            <img src="assets/photon/Quantam-hero.jpeg" alt="Profile" class="about-img zoom-in" />
+          </div>
 
-    <!-- Right: Intro and Stats -->
-    <div class="about-info">
-      <div class="about-text fade-in-right">
-        <p>
-          Results-driven Business Development Executive and Lead Research Analyst with 3+ years of global experience in ETL workflows, data quality,
-          dashboarding, market research, and B2B client acquisition. Expertise in developing end-to-end ETL pipelines, automating research
-          workflows, and architecting analytics dashboards that drive 30% improvement in conversion accuracy. 
-          <br /><br />
-          My success lies in the ability to translate complex data into strategies that drive measurable business outcomes, consistently aligning analytics with organizational goals.
-        </p>
-      </div>
+          <!-- Right: Intro and Stats -->
+          <div class="about-info">
+            <div class="about-text fade-in-right">
+              <p>
+                Results-driven Business Development Executive and Sr. Research Analyst with 3+ years experience in ETL
+                workflows, data analytics, market research, and B2B strategy. Currently pursuing an
+                M.S. in Computer Science (AI & ML), I bring a robust foundation in Python, SQL, Cloud Platforms, and
+                Machine Learning algorithms.
+                <br /><br />
+                Known for optimizing operations, designing end-to-end ETL pipelines, and delivering data-driven
+                insights, I thrive at the intersection of business intelligence and advanced analytics.
+              </p>
+            </div>
 
-      <!-- Now Below the Text -->
-      <div class="stats-row">
-        <div class="stat-card fade-in-left">
-          <i class="fas fa-briefcase stat-icon"></i>
-          <div class="stat-number">{{ stats[0].value }}{{ stats[0].suffix }}</div>
-          <div class="stat-label">{{ stats[0].label }}</div>
+            <!-- Now Below the Text -->
+            <div class="stats-row">
+              <div class="stat-card fade-in-left">
+                <i class="fas fa-briefcase stat-icon"></i>
+                <div class="stat-number">{{ stats[0].value }}{{ stats[0].suffix }}</div>
+                <div class="stat-label">{{ stats[0].label }}</div>
+              </div>
+              <div class="stat-card fade-in-left">
+                <i class="fas fa-project-diagram stat-icon"></i>
+                <div class="stat-number">{{ stats[1].value }}{{ stats[1].suffix }}</div>
+                <div class="stat-label">{{ stats[1].label }}</div>
+              </div>
+              <div class="stat-card fade-in-left">
+                <i class="fas fa-certificate stat-icon"></i>
+                <div class="stat-number">{{ stats[2].value }}{{ stats[2].suffix }}</div>
+                <div class="stat-label">{{ stats[2].label }}</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="stat-card fade-in-left">
-          <i class="fas fa-project-diagram stat-icon"></i>
-          <div class="stat-number">{{ stats[1].value }}{{ stats[1].suffix }}</div>
-          <div class="stat-label">{{ stats[1].label }}</div>
+      </div>
+    </div>
+
+
+    <!-- Panel 2: Skills -->
+    <div class="panel panel--skills in-view">
+      <div class="container">
+        <h2 class="skills-title fade-in-up">Skills</h2>
+
+        <div class="skills-grid">
+          <div class="skill-box fade-in-up">
+            <h3>Programming</h3>
+            <div class="badge-list">
+              <span class="badge" data-info="Used for ETL, automation">Python</span>
+              <span class="badge">Pandas & NumPy</span>
+              <span class="badge">Matplotlib & Seaborn</span>
+              <span class="badge">PySpark</span>
+              <span class="badge">VBA & Excel (Advanced)</span>
+              <span class="badge">R (Basic)</span>
+            </div>
+          </div>
+
+          <!-- Block 2: Machine Learning -->
+          <div class="skill-box">
+            <h3>Machine Learning & AI</h3>
+            <div class="badge-list">
+              <span class="badge">TensorFlow</span>
+              <span class="badge">PyTorch</span>
+              <span class="badge">Scikit-learn</span>
+              <span class="badge">XGBoost & SVM</span>
+              <span class="badge">Random Forest</span>
+              <span class="badge">Time Series (ARIMA, LSTM)</span>
+              <span class="badge">Clustering (K-Means, DBSCAN)</span>
+              <span class="badge">CNNs & VGG-16</span>
+              <span class="badge">NLTK</span>
+              <span class="badge">OpenAI APIs</span>
+              <span class="badge">OpenCV</span>
+            </div>
+          </div>
+
+          <!-- Block 3: Data Engineering & Analytics -->
+          <div class="skill-box">
+            <h3>Data Engineering & Analytics</h3>
+            <div class="badge-list">
+              <span class="badge">ETL Pipelines</span>
+              <span class="badge">Data Warehousing</span>
+              <span class="badge">Big Query</span>
+              <span class="badge">Experiment Tracking</span>
+              <span class="badge">Workflow Orchestration</span>
+              <span class="badge">MLOps & Docker</span>
+              <span class="badge">SQL</span>
+              <span class="badge">NoSQL & MongoDB</span>
+              <span class="badge">PostgreSQL</span>
+            </div>
+          </div>
+
+          <!-- Block 4: Tools -->
+          <div class="skill-box">
+            <h3>Tools & Tech</h3>
+            <div class="badge-list">
+              <span class="badge">Git & GitHub</span>
+              <span class="badge">Linux</span>
+              <span class="badge">Tableau & Power BI</span>
+              <span class="badge">AWS / GCP / Azure</span>
+              <span class="badge">Jira</span>
+              <span class="badge">ZoomInfo</span>
+              <span class="badge">Hunter IO</span>
+              <span class="badge">Sales Navigator</span>
+              <span class="badge">Seamless AI</span>
+            </div>
+          </div>
         </div>
-        <div class="stat-card fade-in-left">
-          <i class="fas fa-certificate stat-icon"></i>
-          <div class="stat-number">{{ stats[2].value }}{{ stats[2].suffix }}</div>
-          <div class="stat-label">{{ stats[2].label }}</div>
-        </div>
       </div>
     </div>
-  </div>
-</div>
-</div>
-
-
-        <!-- Panel 2: Skills -->
-<div class="panel panel--skills in-view">
-  <div class="container">
-  <h2 class="skills-title fade-in-up">Skills</h2>
-
-  <div class="skills-grid">
-    <div class="skill-box fade-in-up" >
-      <h3>Programming</h3>
-      <div class="skill-list">
-        <span class="badge" data-info="Used for ETL, automation">Python</span>
-        <span class="badge">C Programming</span>
-        <span class="badge">R Programming</span>
-        <span class="badge">VBA (Visual Basic for Applications)</span>
-      </div>
-    </div>
-
-    <!-- Block 2: Databases -->
-    <div class="skill-box">
-      <h3>Machine Learning & Deep Learning Frameworks/Libraries</h3>
-      <div class="badge-list">
-        <span class="badge">TensorFlow</span>
-        <span class="badge">PyTorch</span>
-        <span class="badge">Scikit-learn,</span>
-        <span class="badge">XGBoost</span>        
-        <span class="badge">Random Forest</span>
-        <span class="badge">RNN</span>
-        <span class="badge">ANN</span>
-        <span class="badge">CNN</span>
-        <span class="badge">NLTK</span>
-        <span class="badge">OpenAI APIs</span>
-        <span class="badge">OpenCV</span>
-        <span class="badge">NumPy</span>
-        <span class="badge">Pandas</span>
-        <span class="badge">SciPy</span>
-        <span class="badge">Seaborn</span>
-        <span class="badge">Plotly</span>
-      </div>
-    </div>
-
-
-    <!-- Block 4: Tools -->
-    <div class="skill-box">
-      <h3>Tools & Tech</h3>
-      <div class="skill-list">
-        <span class="badge">Docker</span>
-        <span class="badge">Git</span>
-        <span class="badge">Linux</span>
-        <span class="badge">Excel</span>
-        <span class="badge">Tableau</span>
-        <span class="badge">Power BI</span>
-        <span class="badge">SQL</span>
-        <span class="badge">Big Query</span>
-        <span class="badge">Outlook</span>
-        <span class="badge">Jira</span>
-        <span class="badge">ZoomInfo</span>
-        <span class="badge">Hunter IO</span>
-        <span class="badge">Sales Navigator</span>
-        <span class="badge">Seamless AI</span>
-        <span class="badge">Metasploit</span>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 
 
 
 
     <!-- Panel 3: Certifications -->
-<!-- Panel 3: Certifications -->
-<!-- Panel 3: Certifications -->
-<div class="panel panel--certs">
-  <div class="container">
-  <h2 class="cert-title fade-in-up">Certifications</h2>
-  <div class="certs-grid">
-    <!-- Card 1: Core Python -->
-<div class="cert-card fade-in-up">
-  <div class="cert-inner">
-    <!-- FRONT -->
-    <div class="cert-front" style="background-image: url('assets/certification/python.png');">
-      <h3>Core Python</h3>
-    </div>
+    <!-- Panel 3: Certifications -->
+    <!-- Panel 3: Certifications -->
+    <div class="panel panel--certs">
+      <div class="container">
+        <h2 class="cert-title fade-in-up">Certifications</h2>
+        <div class="certs-grid">
+          <!-- Card 1: Core Python -->
+          <div class="cert-card fade-in-up">
+            <div class="cert-inner">
+              <!-- FRONT -->
+              <div class="cert-front" style="background-image: url('assets/certification/python.webp');">
+                <h3>Core Python</h3>
+              </div>
 
-    <!-- BACK -->
-    <div class="cert-back">
-      <span class="cert-badge">Skill-Lync Verified</span>
-      <p><strong>Issuer:</strong> Skill-Lync</p>
-      <p><strong>Date:</strong> April 2023</p>
-      <a href="https://skill-lync.com/certification/individual/71hfued4t9orjiyz" target="_blank" class="cert-link">View Certificate</a>
+              <!-- BACK -->
+              <div class="cert-back">
+                <div class="bg-blur" style="background-image: url('assets/certification/python.webp');"></div>
+                <div class="cert-content">
+                  <span class="cert-badge">Skill-Lync Verified</span>
+                  <p><strong>Issuer:</strong> Skill-Lync</p>
+                  <p><strong>Date:</strong> April 2023</p>
+                  <a href="https://skill-lync.com/certification/individual/71hfued4t9orjiyz" target="_blank"
+                    class="cert-link">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tableau -->
+          <div class="cert-card">
+            <div class="cert-inner">
+              <div class="cert-front" style="background-image: url('assets/certification/Tableau.webp');">
+                <h3>Tableau</h3>
+              </div>
+              <div class="cert-back">
+                <div class="bg-blur" style="background-image: url('assets/certification/Tableau.webp');"></div>
+                <div class="cert-content">
+                  <span class="cert-badge">Skill-Lync Verified</span>
+                  <p><strong>Issuer:</strong> Skill-Lync</p>
+                  <p><strong>Date:</strong> April 2023</p>
+                  <a href="https://skill-lync.com/certification/individual/1kbv7nc39d064syo" target="_blank"
+                    class="cert-link">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Excel -->
+          <div class="cert-card">
+            <div class="cert-inner">
+              <div class="cert-front" style="background-image: url('assets/certification/excel.jpg');">
+                <h3>Excel</h3>
+              </div>
+              <div class="cert-back">
+                <div class="bg-blur" style="background-image: url('assets/certification/excel.jpg');"></div>
+                <div class="cert-content">
+                  <span class="cert-badge">Skill-Lync Verified</span>
+                  <p><strong>Issuer:</strong> Skill-Lync</p>
+                  <p><strong>Date:</strong> March 2023</p>
+                  <a href="https://skill-lync.com/certification/individual/1gb90mdvajy64k2u" target="_blank"
+                    class="cert-link">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SQL -->
+          <div class="cert-card">
+            <div class="cert-inner">
+              <div class="cert-front" style="background-image: url('assets/certification/sql-1.png');">
+                <h3>SQL</h3>
+              </div>
+              <div class="cert-back">
+                <div class="bg-blur" style="background-image: url('assets/certification/sql-1.png');"></div>
+                <div class="cert-content">
+                  <span class="cert-badge">Skill-Lync Verified</span>
+                  <p><strong>Issuer:</strong> Skill-Lync</p>
+                  <p><strong>Date:</strong> March 2023</p>
+                  <a href="https://example.com/sql-cert" target="_blank" class="cert-link">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
-</div>
-    <!-- Tableau -->
-    <div class="cert-card">
-      <div class="cert-inner">
-        <div class="cert-front">
-          <img src="assets/certification/Tableau.png" alt="Tableau Logo" />
-          <h3>Tableau</h3>
-        </div>
-        <div class="cert-back">
-          <span class="cert-badge">Skill-Lync Verified</span>
-          <p><strong>Issuer:</strong> Skill-Lync</p>
-          <p><strong>Date:</strong> April 2023</p>
-          <a href="https://skill-lync.com/certification/individual/1kbv7nc39d064syo" target="_blank" class="cert-link">View Certificate</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Excel -->
-    <div class="cert-card">
-      <div class="cert-inner">
-        <div class="cert-front">
-          <img src="assets/certification/excel.png" alt="Excel Logo" />
-          <h3>Excel</h3>
-        </div>
-        <div class="cert-back">
-          <span class="cert-badge">Skill-Lync Verified</span>
-          <p><strong>Issuer:</strong> Skill-Lync</p>
-          <p><strong>Date:</strong> March 2023</p>
-          <a href="https://skill-lync.com/certification/individual/1gb90mdvajy64k2u" target="_blank" class="cert-link">View Certificate</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- SQL -->
-    <div class="cert-card">
-      <div class="cert-inner">
-        <div class="cert-front">
-          <img src="assets/certification/sql.png" alt="SQL Logo" />
-          <h3>SQL</h3>
-        </div>
-        <div class="cert-back">
-          <span class="cert-badge">Skill-Lync Verified</span>
-          <p><strong>Issuer:</strong> Skill-Lync</p>
-          <p><strong>Date:</strong> March 2023</p>
-          <a href="https://example.com/sql-cert" target="_blank" class="cert-link">View Certificate</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-</div>
-</div>
 </section>

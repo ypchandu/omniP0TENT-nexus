@@ -4,13 +4,22 @@
   <!-- Logo now links to hero -->
   <a href="/" class="navbar__logo">YANGALA PREM CHAND</a>
 
-  <ul class="navbar__links">
-    <!-- Home goes to hero-video -->
-    <li><a href="/" routerLinkActive="active">Home</a></li>
+  <!-- Mobile Toggle Button -->
+  <button class="hamburger-btn" (click)="toggleMenu()" aria-label="Toggle menu">
+    @if (!menuOpen) {
+    <i class="fa fa-bars"></i>
+    } @else {
+    <i class="fa fa-times"></i>
+    }
+  </button>
 
-    <li><a href="#chrono"      routerLinkActive="active">About</a></li>
-    <li><a href="#timeline"   routerLinkActive="active">Timeline</a></li>
-    <li><a href="#projects"   routerLinkActive="active">Projects</a></li>
-    <li><a href="#contact"    routerLinkActive="active">Contact</a></li>
+  <ul class="navbar__links" [class.active]="menuOpen">
+    <!-- Home goes to hero-video -->
+    <li><a href="/" routerLinkActive="active" (click)="toggleMenu()">Home</a></li>
+
+    <li><a href="#chrono" routerLinkActive="active" (click)="toggleMenu()">About</a></li>
+    <li><a href="#timeline" routerLinkActive="active" (click)="toggleMenu()">Timeline</a></li>
+    <li><a href="#projects" routerLinkActive="active" (click)="toggleMenu()">Projects</a></li>
+    <li><a href="#contact" routerLinkActive="active" (click)="toggleMenu()">Contact</a></li>
   </ul>
 </nav>

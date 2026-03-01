@@ -2,14 +2,18 @@
   display: block;
   width: 100vw;
   margin: 0 calc(-1 * 2rem);
-  padding:  0;
- 
+  padding: 0;
+
 }
 
 .atlas-timeline {
-  width: 100vw;                  /* fill the container, not the viewport */                    /* reset any parent margins */
-  padding: 4rem;             /* your vertical breathing room */
-  box-sizing: border-box;       /* include padding in width calculations */
+  width: 100vw;
+  /* fill the container, not the viewport */
+  /* reset any parent margins */
+  padding: 4rem;
+  /* your vertical breathing room */
+  box-sizing: border-box;
+  /* include padding in width calculations */
   background:
     #111 url('/assets/photon/work.png') no-repeat center top/cover fixed;
   /* shorthand for background-color + image + position/size + attachment */
@@ -17,6 +21,7 @@
   overflow: hidden;
   --neon-accent: #4a90e2;
 }
+
 /* .atlas-timeline {
   width: 100vw;
   overflow-y: auto;
@@ -29,6 +34,7 @@
   font-size: 3.5rem;
   background: linear-gradient(90deg, #0ff, #a0f, #00f);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
   text-align: center;
@@ -53,28 +59,39 @@
 }
 
 @keyframes flickerPulse {
-  0%   { text-shadow: 0 0 4px #0ff; }
-  100% { text-shadow: 0 0 15px #0ff, 0 0 25px #a0f; }
+  0% {
+    text-shadow: 0 0 4px #0ff;
+  }
+
+  100% {
+    text-shadow: 0 0 15px #0ff, 0 0 25px #a0f;
+  }
 }
 
 @keyframes glowPulse {
   0% {
     text-shadow:
-      0 0 8px rgba(0,255,255,0.2),
-      0 0 12px rgba(74,144,226,0.4),
-      0 0 20px rgba(144,19,254,0.2);
+      0 0 8px rgba(0, 255, 255, 0.2),
+      0 0 12px rgba(74, 144, 226, 0.4),
+      0 0 20px rgba(144, 19, 254, 0.2);
   }
+
   100% {
     text-shadow:
-      0 0 12px rgba(0,255,255,0.4),
-      0 0 18px rgba(74,144,226,0.6),
-      0 0 28px rgba(144,19,254,0.4);
+      0 0 12px rgba(0, 255, 255, 0.4),
+      0 0 18px rgba(74, 144, 226, 0.6),
+      0 0 28px rgba(144, 19, 254, 0.4);
   }
 }
 
 @keyframes underlineGlow {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 :host {
@@ -88,6 +105,7 @@ app-section-particles {
   z-index: 0;
   pointer-events: none;
 }
+
 section {
   position: relative;
   z-index: 1;
@@ -97,7 +115,7 @@ section {
 .neon-glow {
   color: #4a90e2;
   text-shadow:
-    0 0 8px  #4a90e2,
+    0 0 8px #4a90e2,
     0 0 16px #9013fe;
 }
 
@@ -106,44 +124,57 @@ section {
   position: relative;
   padding: 0 1rem 2rem;
 }
+
 .timeline-controls {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
+
 .timeline-controls button {
-  padding: 0.6rem 1.4rem;
-  margin: 0 0.5rem;
+  padding: 0.8rem 2.5rem;
   font-family: 'Orbitron', sans-serif;
-  font-size: 1rem;
-  border: none;
-  border-radius: 30px;
-  background: rgba(0, 224, 255, 0.1);
-  color: #00e0ff;
-  border: 1px solid #00e0ff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 2px solid #00e0ff;
+  border-radius: 50px;
+  background: rgba(0, 224, 255, 0.15);
+  color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 224, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.3);
+  text-shadow: 0 0 5px #00e0ff;
 }
 
 .timeline-controls button:hover,
 .timeline-controls button.active {
   background: #00e0ff;
-  color: #111;
+  color: #000;
+  transform: translateY(-3px) scale(1.05);
   box-shadow:
-    0 0 12px #00e0ff,
-    0 0 18px #9b00ff;
+    0 5px 15px rgba(0, 224, 255, 0.5),
+    0 0 20px #00e0ff,
+    0 0 30px #9b00ff;
+  text-shadow: none;
 }
 
 /* 3) Section‐specific entry margins */
 .experience .timeline-entry.left {
   margin-right: 55%;
 }
+
 .experience .timeline-entry.right {
   margin-left: 55%;
 }
+
 .education .timeline-entry.left {
   margin-right: 55%;
 }
+
 .education .timeline-entry.right {
   margin-left: 55%;
 }
@@ -155,37 +186,51 @@ section {
   max-width: 800px;
   margin: 0 auto 4rem;
 }
+
 .line {
   position: absolute;
-  top: 0; bottom: 0;
+  top: 0;
+  bottom: 0;
   left: 47.5%;
   transform: translateX(50%);
   width: 6px;
-  background: repeating-linear-gradient(
-    to bottom,
-    #00e0ff 0px,
-    #00e0ff 10px,
-    transparent 10px,
-    transparent 20px
-  );
+  background: repeating-linear-gradient(to bottom,
+      #00e0ff 0px,
+      #00e0ff 10px,
+      transparent 10px,
+      transparent 20px);
   box-shadow: 0 0 12px #00e0ff, 0 0 24px #9b00ff;
   border-radius: 10px;
 }
+
 /* draw downward */
 .line.drawn {
   animation: drawLine 1s ease-out forwards;
 }
+
 /* reverse upward */
 .line.reversed {
   animation: undrawLine 1s ease-out forwards;
 }
+
 @keyframes drawLine {
-  from { height: 0; }
-  to   { height: 100%; }
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 100%;
+  }
 }
+
 @keyframes undrawLine {
-  from { height: 100%; }
-  to   { height: 0; }
+  from {
+    height: 100%;
+  }
+
+  to {
+    height: 0;
+  }
 }
 
 /* 5) Entries—never cross the wall */
@@ -206,9 +251,17 @@ section {
 }
 
 @keyframes fadeUp {
-  0% { transform: translateY(40px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
+
 /* 6) Markers always visible */
 .marker {
   position: absolute;
@@ -223,6 +276,7 @@ section {
   padding-left: 1.8rem;
   font-size: 0.9rem;
 }
+
 .points li {
   margin-bottom: 0.5rem;
   color: #efeef5;
@@ -230,14 +284,22 @@ section {
   white-space: normal;
   overflow-wrap: break-word;
 }
+
 .points li span {
   display: inline-block;
   opacity: 0;
   transform: translateX(var(--offsetX));
   animation: letterReveal 0.05s forwards ease-out;
 }
-.points li span:nth-child(odd)  { --offsetX: -10px; }
-.points li span:nth-child(even) { --offsetX:  10px; }
+
+.points li span:nth-child(odd) {
+  --offsetX: -10px;
+}
+
+.points li span:nth-child(even) {
+  --offsetX: 10px;
+}
+
 @keyframes letterReveal {
   to {
     opacity: 1;
@@ -251,12 +313,71 @@ section {
   color: #df720c;
   margin-bottom: 0.25rem;
 }
+
 h3 {
   margin: 0.25rem 0;
   font-size: 1.2rem;
 }
+
 small {
   display: block;
   opacity: 0.75;
   margin-bottom: 0.5rem;
+}
+
+/* ============ Mobile Responsive Tweaks ============ */
+@media (max-width: 768px) {
+  .atlas-timeline {
+    padding: 2rem 1rem;
+  }
+
+  .timeline-title {
+    font-size: 2.2rem;
+  }
+
+  .timeline-container {
+    width: 100%;
+    margin: 0 auto 2rem;
+  }
+
+  /* Move line to the left */
+  .line {
+    left: 10px;
+    transform: none;
+  }
+
+  /* Make all entries full width (minus left offset for line) */
+  .timeline-entry {
+    width: calc(100% - 30px);
+    margin-left: 30px !important;
+    margin-right: 0 !important;
+    padding: 1rem;
+  }
+
+  /* Remove alternating left/right layout overrides on mobile */
+  .experience .timeline-entry.left,
+  .education .timeline-entry.left {
+    margin-right: 0;
+  }
+
+  .experience .timeline-entry.right,
+  .education .timeline-entry.right {
+    margin-left: 30px;
+  }
+
+  /* Reposition markers to align with the new left line */
+  .marker {
+    left: -2.2rem;
+  }
+
+  /* Mobile controls */
+  .timeline-controls {
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-controls button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
 }

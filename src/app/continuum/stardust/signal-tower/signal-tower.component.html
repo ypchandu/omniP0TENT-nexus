@@ -1,7 +1,7 @@
 <section class="signal-contact-wrapper">
   <!-- Particle background -->
   <div class="particles-container"></div>
-  
+
   <!-- Left Panel -->
   <div class="contact-left-panel">
     <div class="connection-display">
@@ -22,74 +22,70 @@
   <div class="contact-right-panel">
     <div class="form-card" id="formCard">
       <h2 class="neon-title">Send a Signal</h2>
-      
+
       <div class="input-container">
         <input id="nameInput" type="text" required />
         <label>Your Name</label>
         <div class="input-glow"></div>
       </div>
-      
+
       <div class="input-container">
         <input id="emailInput" type="email" required />
         <label>Email Address</label>
         <div class="input-glow"></div>
       </div>
-      
+
       <div class="input-container">
         <textarea id="messageInput" rows="5" required></textarea>
         <label>Your Message</label>
         <div class="input-glow"></div>
       </div>
-      
-      <button id="sendButton" class="neon-button">
-                  <a  href="mailto:yp.chand9@gmail.com?subject=Contact from Portfolio&body=Hi Prem, I am reaching out to you from your portfolio.">
-              <span>TRANSMIT MESSAGE</span>
-              <div class="button-glow"></div>
-              <div class="button-beam"></div>
-            </a>
+
+      <button id="sendButton" class="neon-button" (click)="triggerMailTo()">
+        <span>TRANSMIT MESSAGE</span>
+        <div class="button-glow"></div>
+        <div class="button-beam"></div>
       </button>
     </div>
   </div>
 
   <!-- Enhanced Footer -->
   <footer class="footer">
-  <video
-    #footerVid
-    class="footer-video"
-    autoplay muted playsinline loop preload="auto"
-  >
-    <source src="assets/pixel_h264.mp4" type="video/mp4" />
-  </video>
-    
-    <div class="footer-grid">
-      <div class="grid-line"></div>
-      <div class="grid-line"></div>
-      <div class="grid-line"></div>
-    </div>
-    
+    <video #footerVid class="footer-video" autoplay muted playsinline loop preload="auto">
+      <source src="assets/pixel_h264.mp4" type="video/mp4" />
+    </video>
+    <div class="footer-overlay"></div>
+
     <div class="footer-content">
-      <div class="signature-container">
-        <p class="neon-signature">Designed by Prem</p>
-        <div class="signature-glow"></div>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3 class="footer-logo">YANGALA PREM CHAND</h3>
+          <p class="footer-tagline">Crafting immersive digital experiences.</p>
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/omnip0tent/" target="_blank" class="social-icon" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/ypchandu" target="_blank" class="social-icon" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:yp.chand9@gmail.com" class="social-icon" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://www.naukri.com/mnjuser/profile" target="_blank" class="social-icon" title="Naukri">
+            <i class="fas fa-briefcase"></i>
+          </a>
+          <a href="https://www.instagram.com/__omnip0tent__?igsh=d3V3YzE1Z3AzdXQw&utm_source=qr/" target="_blank"
+            class="social-icon" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
       </div>
-      
-<div class="footer-links">
-                <a href="https://linkedin.com/in/yangalapremchand" target="_blank" class="neon-link" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/ypchandu" target="_blank" class="neon-link" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:yp.chand9@gmail.com" class="neon-link" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://www.naukri.com/mnjuser/profile" target="_blank" class="neon-link" title="Naukri">
-                    <i class="fas fa-briefcase"></i>
-                </a>
-                <a href="https://www.instagram.com/__omnip0tent__?igsh=d3V3YzE1Z3AzdXQw&utm_source=qr/" target="_blank" class="neon-link" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-    
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; {{ currentYear }} Yangala Prem Chand. All rights reserved.</p>
+        <p class="designer-text">Developed and designed by <span class="neon-text">Prem</span></p>
       </div>
     </div>
   </footer>
