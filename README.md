@@ -1,6 +1,6 @@
 # OmniP0TENT Nexus
 
-![Project Hero](./src/assets/photon/Quantam-hero.jpeg)
+![Project Hero](./src/assets/docs/Quantam-hero.png)
 
 ## 🌌 Overview
 **OmniP0TENT Nexus** is an immersive, cosmos-themed interactive portfolio web application built to showcase personal projects, skills, and professional journey. Designed with a striking dark aesthetic and dynamic animations, the application provides a unique space-themed user experience.
