@@ -6,12 +6,12 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 Once the server is running, open your browser and navigate to `https://omnipotent-nexus.netlify.app`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## RUN
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To generate a new component, run:
 
 ```bash
-ng generate component component-name
+https://omnipotent-nexus.netlify.app
 ```
 
 For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
@@ -51,4 +51,5 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
 
