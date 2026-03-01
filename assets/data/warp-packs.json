@@ -1,0 +1,16 @@
+// src/data/warp-packs.json
+[
+  {
+    "id": 1,
+    "name": "Data Analytics",
+    "icon": "analytics",
+    "description": "Exploratory data analysis, visualization, and reporting"
+  },
+  {
+    "id": 2,
+    "name": "Machine Learning",
+    "icon": "rocket",
+    "description": "Supervised & unsupervised models, model tuning"
+  }
+  /* …etc. */
+]
