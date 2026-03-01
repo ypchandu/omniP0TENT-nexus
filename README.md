@@ -1,9 +1,12 @@
 # OmniP0TENT Nexus
 
-![Test Image](./src/assets/docs/Test.png)
-
 ## 🌌 Overview
 **OmniP0TENT Nexus** is an immersive, cosmos-themed interactive portfolio web application built to showcase personal projects, skills, and professional journey. Designed with a striking dark aesthetic and dynamic animations, the application provides a unique space-themed user experience.
+
+
+![Test Image](./src/assets/docs/Test.png)
+
+
 
 ## 🚀 Technologies Used
 This project utilizes a modern technology stack to deliver high-performance rendering and sleek micro-interactions:
@@ -42,5 +45,6 @@ Navigate to `http://localhost:4200/`. The application will automatically reload 
 
 ### Architecture Note 2
 ![Architecture Note 2](./src/assets/docs/2.jpeg)
+
 
 
