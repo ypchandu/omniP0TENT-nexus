@@ -22,10 +22,15 @@ particlesJS('particles-background', {
     }
   },
   interactivity: {
-    detect_on: "canvas",
+    detect_on: "window",
     events: {
       onhover: { enable: true, mode: "repulse" },
+      onclick: { enable: true, mode: "push" },
       resize: true
+    },
+    modes: {
+      repulse: { distance: 150, duration: 0.4 },
+      push: { particles_nb: 4 }
     }
   },
   retina_detect: true

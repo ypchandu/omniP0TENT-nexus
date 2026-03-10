@@ -66,10 +66,23 @@ export class ArtifactShowcaseComponent {
         'Visualized monthly seasonality trends, pinpointing peak ordering periods (Dawn vs. Morning vs. Night).',
         'Evaluated average freight values and correlated payment installment patterns with customer retention.'
       ]
+    },
+    {
+      title: 'Voice Recognisation Home Automation (IOT)',
+      shortDesc: 'IoT-based home automation system controlled via voice commands.',
+      image: 'assets/projects/IOT.jpeg',
+      githubLink: 'https://github.com/ypchandu',
+      insights: [
+        'Designed a voice-controlled home automation system using IoT technologies.',
+        'Integrated natural language processing for accurate voice command recognition.',
+        'Developed hardware modules to interface with home appliances seamlessly.',
+        'Improved energy efficiency and accessibility for smart home environments.'
+      ]
     }
   ];
 
   selectedProject: Project | null = null;
+
   isModalOpen: boolean = false;
 
   openModal(project: Project, event: Event): void {

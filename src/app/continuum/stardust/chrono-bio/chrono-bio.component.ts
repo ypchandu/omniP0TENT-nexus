@@ -115,20 +115,22 @@ export class ChronoBioComponent implements AfterViewInit {
       // Animate skill boxes
       const skillBoxes = wrap.querySelectorAll('.skill-box');
       skillBoxes.forEach((box, i) => {
-        gsap.from(box, {
-          opacity: 0,
-          scale: 0.6,
-          y: 100,
-          duration: 1.4,
-          delay: i * 0.25 + 0.4,
-          ease: 'power4.out',
-          scrollTrigger: {
-            trigger: box,
-            start: 'top 80%',
-            once: true,
-            onEnter: () => box.classList.add('visible')
+        gsap.fromTo(box,
+          { opacity: 0, scale: 0.6, y: 100 },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 1.4,
+            delay: i * 0.25 + 0.4,
+            ease: 'power4.out',
+            scrollTrigger: {
+              trigger: box,
+              start: 'top 80%',
+              once: true
+            }
           }
-        });
+        );
       });
 
       // Certifications animation
