@@ -164,6 +164,11 @@
   padding: 0 1rem;
 }
 
+.duplicate-page {
+  display: none;
+  /* Hide duplicate on desktop */
+}
+
 
 /* Card 3D flip */
 .project-card {
@@ -335,14 +340,12 @@
   }
 
   .projects-frame {
-    width: 100%;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
     padding-bottom: 1.5rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
   }
 
   .projects-frame::-webkit-scrollbar {
@@ -351,25 +354,45 @@
 
   .projects-track {
     display: flex;
-    flex-direction: row;
+    flex-wrap: nowrap;
     width: max-content;
-    transform: none !important;
+    animation: scrollMarquee 25s linear infinite;
     gap: 1.5rem;
-    padding: 0 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .projects-track:active,
+  .projects-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* Define continuous horizontal animation */
+  @keyframes scrollMarquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
   }
 
   .projects-page {
     display: flex;
-    flex-direction: row;
-    width: auto;
+    flex-wrap: nowrap;
     gap: 1.5rem;
+    padding: 0;
+  }
+
+  .duplicate-page {
+    display: flex;
+    /* Show duplicate on mobile */
   }
 
   .project-card {
     width: 85vw;
     max-width: 320px;
     height: 320px;
-    scroll-snap-align: center;
     flex-shrink: 0;
   }
 

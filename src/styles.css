@@ -72,7 +72,6 @@ a {
 
   /* 2) Turn your horizontal panels into a vertical scroll */
   .signal-contact-wrapper,
-  .projects-frame,
   .carousel-section {
     display: block;
     overflow-x: visible;
@@ -80,15 +79,9 @@ a {
     padding: 0 1rem;
   }
 
-  .signal-panel,
-  .projects-page {
+  .signal-panel {
     width: 100% !important;
     margin-bottom: 2rem;
-  }
-
-  .projects-track {
-    width: 100% !important;
-    transform: translateX(0) !important;
   }
 
   /* 3) Revert any vertical-writing text back to horizontal */
@@ -182,21 +175,7 @@ a {
     transform: translate(-50%, -60%) !important;
   }
 
-  /* ─── PROJECTS & FOOTER ─── */
-  .projects-track {
-    display: block !important;
-    transform: none !important;
-  }
-
-  .projects-page {
-    width: 100% !important;
-    padding: 0 1rem !important;
-  }
-
-  .project-card {
-    margin-bottom: 1rem !important;
-  }
-
+  /* ─── FOOTER ─── */
   .footer,
   .footer-video {
     width: 100vw !important;

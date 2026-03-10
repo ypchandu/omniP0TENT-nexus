@@ -53,27 +53,36 @@ export class ChronoBioComponent implements AfterViewInit {
       });
       container.style.height = `${maxHeight}px`;
 
-      setTimeout(() => {
-        const updatedMaxHeight = Array.from(panels).reduce((max, panel) =>
-          Math.max(max, panel.scrollHeight), 0);
+      let mm = gsap.matchMedia();
 
-        container.style.height = `${updatedMaxHeight}px`;
-      }, 1500);
-      // Set full scroll container height
+      mm.add("(min-width: 769px)", () => {
+        // Set container height
+        container.style.height = `${maxHeight}px`;
 
+        setTimeout(() => {
+          const updatedMaxHeight = Array.from(panels).reduce((max, panel) =>
+            Math.max(max, panel.scrollHeight), 0);
 
-      // Animate horizontal scroll
-      gsap.to(wrap, {
-        x: -totalScrollWidth,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: container,
-          start: 'top top',
-          end: `+=${totalScrollWidth}`,
-          scrub: 1.25,
-          pin: true,
-          anticipatePin: 1
-        }
+          container.style.height = `${updatedMaxHeight}px`;
+        }, 1500);
+
+        // Animate horizontal scroll
+        gsap.to(wrap, {
+          x: -totalScrollWidth,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: container,
+            start: 'top top',
+            end: `+=${totalScrollWidth}`,
+            scrub: 1.25,
+            pin: true,
+            anticipatePin: 1
+          }
+        });
+      });
+
+      mm.add("(max-width: 768px)", () => {
+        container.style.height = 'auto'; // allow natural stacking
       });
 
       // Panel activate animation

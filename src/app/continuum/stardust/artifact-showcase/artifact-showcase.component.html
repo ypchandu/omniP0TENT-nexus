@@ -26,6 +26,25 @@
           </a>
         </div>
       </div>
+      <!-- Duplicate for infinite marquee scroll on mobile -->
+      <div class="projects-page duplicate-page" aria-hidden="true">
+        <div class="project-card" *ngFor="let project of projects">
+          <a href="#" (click)="openModal(project, $event)">
+            <div class="card-front">
+              <img [src]="project.image" [alt]="project.title" class="project-img" />
+            </div>
+            <div class="card-back">
+              <div class="card-back-bg" [style.background-image]="'url(' + project.image + ')'"></div>
+              <div class="card-back-overlay"></div>
+              <div class="project-back-content">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.shortDesc }}</p>
+                <span class="card-btn">View Details</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
