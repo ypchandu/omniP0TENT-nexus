@@ -1,4 +1,4 @@
-import { Component }            from '@angular/core';
+import { Component, OnInit }            from '@angular/core';
 import { CommonModule }         from '@angular/common';
 import { NavbarComponent }      from './continuum/navbar/navbar.component';
 import { HeroVideoComponent }   from './continuum/hero-video/hero-video.component';
@@ -14,6 +14,9 @@ import { SignalTowerComponent }
                                  from './continuum/stardust/signal-tower/signal-tower.component';
 import { GlyphTypeComponent }
                                  from './continuum/stardust/glyph-type/glyph-type.component';
+import { environment } from '../environments/environment';
+
+declare let gtag: Function;
 
 @Component({
   selector: 'app-root',
@@ -34,8 +37,33 @@ import { GlyphTypeComponent }
   templateUrl: './app.component.html',
   styleUrls:   ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title(title: any) {
     throw new Error('Method not implemented.');
+  }
+
+  ngOnInit() {
+    this.initGoogleAnalytics();
+  }
+
+  private initGoogleAnalytics() {
+    const gaId = environment.gaMeasurementId;
+    if (!gaId) return;
+
+    // Inject external GA script
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+    document.head.appendChild(script);
+
+    // Initialize config
+    const tsScript = document.createElement('script');
+    tsScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${gaId}');
+    `;
+    document.head.appendChild(tsScript);
   }
 }
