@@ -7,6 +7,8 @@ interface Project {
   image: string;
   githubLink: string;
   insights: string[];
+  tableauLink?: string;
+  huggingfaceLink?: string;
 }
 
 @Component({
@@ -20,6 +22,20 @@ interface Project {
 })
 export class ArtifactShowcaseComponent {
   projects: Project[] = [
+    {
+      title: 'FinopsENV – Autonomous FinOps Agent',
+      shortDesc: 'An OpenEnv-compliant RL environment simulating enterprise Financial Operations for the Meta × Scaler PyTorch Hackathon.',
+      image: 'assets/projects/FinopsENV.jpg',
+      githubLink: 'https://github.com/ypchandu/FinopsENV',
+      huggingfaceLink: 'https://huggingface.co/spaces/OMNIP0TENT/Syntax_Squad_FinopsENV',
+      insights: [
+        'Built an OpenEnv-compliant RL environment simulating a 52-week enterprise FinOps fiscal cycle with deterministic grading.',
+        'Engineered a Client-Server architecture: a Dockerized FastAPI state machine on Hugging Face Spaces + a local LLM-powered inference client.',
+        'Designed a strictly typed action space (ModifySaaSSeats, SwitchLLMRoutingTier, NoOp) using Pydantic Discriminated Unions to prevent LLM hallucinations.',
+        'Implemented a continuous reward function penalizing SLA breaches (−75), employee churn (−150), and bankruptcy (−500) while rewarding cost savings.',
+        'Collaborated with Scaler and Woolf University as part of Team Syntax Squad / OMNIP0TENT for the Meta × Scaler Hackathon 2026.'
+      ]
+    },
     {
       title: 'ASITEM Architectural',
       shortDesc: 'Deep learning model transforming architectural sketches into precise 3D models.',
@@ -36,11 +52,13 @@ export class ArtifactShowcaseComponent {
       shortDesc: 'Analysis of Netflix content to guide strategic production decisions.',
       image: 'assets/projects/Netflix logo.png',
       githubLink: 'https://github.com/ypchandu/NETFLIX_ANALYSIS',
+      tableauLink: 'https://public.tableau.com/views/NETFLIXfinalproject_16776586709610/TURNON?:language=en-US&:display_count=n&:origin=viz_share_link',
       insights: [
         'Explored over 10,000+ movies & TV shows, isolating trends in rating, release year, and duration.',
         'Visualized Univariate & Bivariate distributions to pinpoint optimal launch strategies.',
         'Investigated actor and director trends across genres to guide future production investments.',
-        'Recommended actionable business insights focusing on regional content variations and seasonality.'
+        'Recommended actionable business insights focusing on regional content variations and seasonality.',
+        'Built an interactive Tableau dashboard for deep-dive visual exploration of Netflix content trends.'
       ]
     },
     {

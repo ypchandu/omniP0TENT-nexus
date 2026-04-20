@@ -32,7 +32,7 @@ export class ChronoBioComponent implements AfterViewInit {
 
   stats = [
     { icon: 'fas fa-briefcase', value: 4, suffix: '+', label: 'Experience' },
-    { icon: 'fas fa-project-diagram', value: 5, suffix: '+', label: 'Projects' },
+    { icon: 'fas fa-project-diagram', value: 6, suffix: '+', label: 'Projects' },
     { icon: 'fas fa-certificate', value: 4, suffix: '+', label: 'Certificates' },
   ];
 

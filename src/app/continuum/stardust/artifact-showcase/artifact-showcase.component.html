@@ -12,7 +12,7 @@
         <div class="project-card" *ngFor="let project of projects">
           <a href="#" (click)="openModal(project, $event)">
             <div class="card-front">
-              <img [src]="project.image" [alt]="project.title" class="project-img" />
+              <img [src]="project.image" [alt]="project.title" class="project-img" loading="lazy" />
             </div>
             <div class="card-back">
               <div class="card-back-bg" [style.background-image]="'url(' + project.image + ')'"></div>
@@ -31,7 +31,7 @@
         <div class="project-card" *ngFor="let project of projects">
           <a href="#" (click)="openModal(project, $event)">
             <div class="card-front">
-              <img [src]="project.image" [alt]="project.title" class="project-img" />
+              <img [src]="project.image" [alt]="project.title" class="project-img" loading="lazy" />
             </div>
             <div class="card-back">
               <div class="card-back-bg" [style.background-image]="'url(' + project.image + ')'"></div>
@@ -74,6 +74,12 @@
           <div class="modal-actions">
             <a [href]="selectedProject.githubLink" target="_blank" class="github-link-btn">
               <i class="fab fa-github"></i> View Repository
+            </a>
+            <a *ngIf="selectedProject.tableauLink" [href]="selectedProject.tableauLink" target="_blank" class="tableau-link-btn">
+              <i class="fas fa-chart-bar"></i> View Tableau Dashboard
+            </a>
+            <a *ngIf="selectedProject.huggingfaceLink" [href]="selectedProject.huggingfaceLink" target="_blank" class="hf-link-btn">
+              <span>🤗</span> View Space
             </a>
           </div>
         </div>

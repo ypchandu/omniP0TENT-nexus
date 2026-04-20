@@ -1,5 +1,10 @@
 <section #heroSection class="hero-video" [class.scrolled]="scrolled">
-  <video #introVid class="hero-video__media desktop-only" autoplay muted playsinline loop preload="auto">
+  <video #introVid class="hero-video__media desktop-only"
+         autoplay muted playsinline loop
+         preload="auto"
+         poster="assets/photon/work.png"
+         disablePictureInPicture
+         disableRemotePlayback>
     <source src="assets/intro.mp4" type="video/mp4" />
   </video>
 
